@@ -1,0 +1,86 @@
+.main-section {
+  height: 500px;
+  margin-top: 2rem;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.main-text h1 {
+  font-size: 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #535050;
+}
+
+.main-text p {
+  font-size: 1.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.shop-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  color: #f3e1e4;
+  background-color: #ec546a;
+  font-size: 1.2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+  box-shadow: rgba(247, 146, 88, 0.587) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+}
+
+.main-img img {
+  width: 600px;
+  height: 400px;
+}
+
+.about-shipping {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shipping {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 750px;
+  height: 100px;
+  border-top: none;
+  padding: 1rem;
+  border-bottom: 2px dotted #ec546a;
+  border-right: 2px dotted #ec546a;
+  border-left: 2px dotted #ec546a;
+  box-shadow: #f7adb8 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.free-delivery {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.delivery {
+  display: flex;
+  flex-direction: column;
+}
+
+span img {
+  height: 50px;
+  width: 50px;
+}
+
+.delivery .free {
+  font-weight: 850;
+}

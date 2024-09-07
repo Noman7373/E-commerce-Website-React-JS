@@ -1,0 +1,118 @@
+.main-cart {
+    /* height: 900px; */
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.cart-title h1 {
+    font-size: 2.5rem;
+}
+
+h1 hr {
+    border: none; 
+    height: 1px;  
+    background-color: #ec546a;
+}
+
+.sale-category {
+    display: flex;
+    gap: 2rem;
+    height: 60px;
+}
+
+.sale-category p {
+    font-weight: 500;
+    cursor: pointer;
+    color: #686D76;
+    &:hover {
+        color: #000;
+        border-bottom: 1px solid #000;
+    }
+}
+
+
+.cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+
+.marketing-box {
+    background-color: #F4D6E2;
+    margin-top: 5rem;
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.marketing-text h1 {
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.marketing-text p {
+    color: #61677A;
+}
+.marketing-logo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+
+.playStore-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    background-color: #000;
+    border-radius: 0.7rem;
+    -webkit-border-radius: 0.7rem;
+    -moz-border-radius: 0.7rem;
+    -ms-border-radius: 0.7rem;
+    -o-border-radius: 0.7rem;
+}
+
+.playStore-logo img {
+    width: 30px;
+}
+
+.apple-logo {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.title .get-text {
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+.title .playStore {
+    font-size: 1rem;
+    color: #ffffff;
+}
+  
+
+
+.marketing-shopping-image img {
+    width: 400px;
+    height: auto;
+}
