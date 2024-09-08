@@ -1,10 +1,13 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { ProductProvider } from "./components/Context/Providercontext.jsx";
 
+// import { Provider } from "react-redux";
+import store from "./store/store.js";
+// import { ProductProvider } from "./components/Context/Providercontext.jsx"; 
+import { Provider } from "react-redux";
 createRoot(document.getElementById("root")).render(
-  <ProductProvider>
+  <Provider store={store}>
     <App />
-  </ProductProvider>
+  </Provider>
 );

@@ -1,4 +1,4 @@
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+
 import "./productcart.css";
 import Productlist from "./Productpage/Productlist";
 import { FaApple } from "react-icons/fa";

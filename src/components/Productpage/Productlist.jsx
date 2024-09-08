@@ -1,36 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./productlist.css";
 import { IoStarSharp } from "react-icons/io5";
-import useData from "../../hooks/useData";
+
+import { fetchProduct, STATUSES } from "../../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 const Productlist = () => {
-  const { data } = useData();
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.cart.products); // Use 'cart' as it matches your slice name
+  console.log("Product Data:", data);
   let star = [1, 2, 3, 4, 5];
 
-  const handleAddToCart = () => {
-    let productLocalStorage = localStorage.getItem("productItmes");
-    if (!productLocalStorage) {
-      productLocalStorage = [];
-    } else {
-      productLocalStorage = JSON.parse(productLocalStorage);
-    }
+  useEffect(() => {
+    dispatch(fetchProduct());
+  }, [dispatch]);
 
-    productLocalStorage.push(data);
+  if (status === STATUSES.LOADING) {
+    console.log("loading");
+    return <h2>Loading...</h2>;
+  }
 
-    localStorage.setItem("productItems", JSON.stringify(productLocalStorage));
+  if (status === STATUSES.ERROR) {
+    console.log("error");
 
-    console.log("Product added to cart:", data);
-  };
+    return <h2>There was an error loading the products.</h2>;
+  }
+
   return (
     <>
-      {data &&
+      {data && data > 0 ?
         data.map(({ id, image, title, price }) => (
           <div key={id} className="item-cart">
             <div className="product-img">
-              <img src={image} alt="" />
+              <img src={image} alt={title} />
             </div>
 
             <div className="product-rating">
-              {star.map((item, index) => (
+              {star.map((index) => (
                 <IoStarSharp key={index} />
               ))}
             </div>
@@ -41,11 +47,17 @@ const Productlist = () => {
                 USD {price} <span></span>
               </p>
               <div className="addtocart-btn">
-                <button onClick={() => handleAddToCart()}>Add To Cart</button>
+                <button>Add To Cart</button>
               </div>
             </div>
           </div>
-        ))}
+          
+        )) : (
+          <h2>No Data Available</h2>
+        )
+      } 
+          
+        
     </>
   );
 };
