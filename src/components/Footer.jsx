@@ -14,17 +14,18 @@ const Footer = () => {
               their works. In <br /> some circumstances, it's possible to <br />{" "}
               use a copyright-protected work <br /> without infiring their.{" "}
             </p>
-            <h3>
-              Follow Us <br /> <hr />
-            </h3>
-            <span className="social-icons ">
-              <a href="#">
-                <FaFacebook />
-              </a>
-              <a href="#">
-                <IoLogoInstagram />
-              </a>
-            </span>
+            <div className="follow-us">
+              <h3>Follow Us </h3>
+              <div className="socail-media">
+                <a href="#">
+                  {" "}
+                  <FaFacebook />
+                </a>
+                <a href="#">
+                  <IoLogoInstagram />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="footer-details">
             <h3>
@@ -67,14 +68,15 @@ const Footer = () => {
             <li>+000000000</li>
             <li>Current Address :</li>
             <li>Baharin</li>
-            <li>Mail :</li>
-            <li>abc@gmail.com</li>
+            <li>Mail : abc@gmail.com</li>
           </div>
         </div>
         <hr />
         <div className="copy-right">
-        <p>Copyright 2024, All Rights Reserved</p>
-        <p>Designed By  <strong> Noman Ahmed</strong></p>
+          <p>Copyright 2024, All Rights Reserved</p>
+          <p>
+            Designed By <strong> Noman Ahmed</strong>
+          </p>
         </div>
       </div>
     </footer>

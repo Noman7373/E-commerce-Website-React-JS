@@ -51,7 +51,7 @@ const Productcart = () => {
           </div>
         </div>
         <div className="marketing-shopping-image">
-          <img src="/marketingImage.jpg" alt="marketing-banner-image" />
+          <img className="marketing-shopping-image" src="/marketingImage.jpg" alt="marketing-banner-image" />
         </div>
       </div>
     </section>

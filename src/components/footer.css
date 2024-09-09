@@ -2,11 +2,13 @@
   margin-top: 3rem;
   padding: 1rem;
   background-color: #000;
+  height: 270px;
 }
 
 .footer-section {
   display: flex;
   justify-content: space-around;
+  height: 200px;
 }
 
 .footer-details {
@@ -18,15 +20,29 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.follow-us {
+  margin-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ .follow-us span {
+  font-size: 1rem;
+ }
+
 .footer-details p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.social-icons a {
-  margin: 0.5rem;
+
+.socail-media {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socail-media a {
+  font-size: 1.7rem;
   color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
 }
 
 .footer-details li {

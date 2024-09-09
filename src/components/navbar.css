@@ -75,10 +75,11 @@ nav {
 .icons {
   font-size: 1.5rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.9rem;
   margin-left: 2rem;
   cursor: pointer;
 }
+
 
 /* -------    Nav section - 2 --------- */
 

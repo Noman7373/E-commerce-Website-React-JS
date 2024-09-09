@@ -1,17 +1,38 @@
-import Footer from "./components/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./components/pages/AppLayout";
 import Main from "./components/Main";
-import Navbar from "./components/Navbar";
+import Productlist from "./components/Productpage/Productlist";
 import Productcart from "./components/Productcart";
+import CartSection from "./components/Productpage/CartSection";
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <Main />
-      <Productcart />
-      <Footer />
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: (
+            <>
+              <Main />
+              <Productcart />
+            </>
+          ),
+        },
+        {
+          path: "/shop",
+          element: <Productcart />,
+        },
+        {
+          path: "/cart",
+          element: <CartSection />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

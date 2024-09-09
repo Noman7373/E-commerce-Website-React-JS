@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "./navbar.css";
-import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { CiHeart, CiUser } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { SlCallOut } from "react-icons/sl";
+import { NavLink } from "react-router-dom";
+import { GoDotFill } from "react-icons/go";
+import { useSelector } from "react-redux";
 const Navbar = () => {
-  const [showCategory, setShowCategory] = useState(false);
+  const items = useSelector((state) => state.cart);
+  // const [showCategory, setShowCategory] = useState(false);
 
-  function handleCategory() {
-    setShowCategory((prev) => !prev);
-  }
+  // function handleCategory() {
+  //   setShowCategory((prev) => !prev);
+  // }
   return (
     <nav>
       <div className="main">
@@ -21,17 +25,10 @@ const Navbar = () => {
           <div className="serch-category">
             <p>
               All Category{" "}
-              <span onClick={handleCategory}>
+              {/* <span onClick={handleCategory}>
                 {showCategory ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-              </span>
+              </span> */}
             </p>
-            {/* <ul
-              className={showCategory ? "category-list-show" : "category-list"}
-            >
-              <li>T-Shirts</li>
-              <li>Shoes</li>
-              <li>Pents</li>
-            </ul> */}
             <input type="text" placeholder="Search Your Product" />
           </div>
           <div className="search-btn">
@@ -40,7 +37,14 @@ const Navbar = () => {
           <div className="icons">
             <CiUser />
             <CiHeart />
-            <FaCartShopping />
+
+            <div className="cart-count">
+              <NavLink to="/cart">
+                {items.length > 0 ? <GoDotFill /> : ""}
+
+                <FaCartShopping />
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
@@ -55,16 +59,16 @@ const Navbar = () => {
         </div>
         <div className="home-links">
           <li>
-            <a href="">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="">About Us</a>
+            <NavLink to="">About Us</NavLink>
           </li>
           <li>
-            <a href="">Shop</a>
+            <NavLink to="/shop">Shop</NavLink>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <NavLink to="/">Contact Us</NavLink>
           </li>
         </div>
         <div className="contact">
