@@ -1,18 +1,27 @@
 .item-cart {
-  height: 345px;
-  width: 270px;
+  height: 360px;
+  width: 300px;
   cursor: pointer;
+  border: 1px solid black;
+  padding: 0.2rem;
 }
 
-.item-cart:hover button {
+/* .item-cart:hover button {
   display: block;
-}
+} */
 
 .product-img {
   display: flex;
 }
 
-.product-img img {
+/* .product-img img {
+  aspect-ratio: 2/2;
+  object-fit: contain;
+  mix-blend-mode: color;
+  width: 50%;
+} */
+
+.product-picture {
   aspect-ratio: 2/2;
   object-fit: contain;
   mix-blend-mode: color;
@@ -20,7 +29,7 @@
 }
 
 .product-rating {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   color: rgb(221, 221, 3);
 }
@@ -28,23 +37,23 @@
 .product-details h2 {
   font-size: 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1rem;
 }
 
 .product-details p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1rem;
 }
 
-.addtocart-btn button {
-  display: none;
-  padding: 0.5rem 1rem;
-  border: none;
-  color: #fff;
-  background-color: #ec546a;
+.addtocart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 1rem;
+  padding-right: 1rem;
+}
+
+.add-icon {
+  font-size: 1.9rem;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  border-radius: 0.7rem;
-  -webkit-border-radius: 0.7rem;
-  -moz-border-radius: 0.7rem;
-  -ms-border-radius: 0.7rem;
-  -o-border-radius: 0.7rem;
 }
