@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import { GoDotFill } from "react-icons/go";
 import { useSelector } from "react-redux";
 const Navbar = () => {
-  const items = useSelector((state) => state.cart);
+  // const items = useSelector((state) => state.cart);
   // const [showCategory, setShowCategory] = useState(false);
 
   // function handleCategory() {
@@ -25,9 +25,6 @@ const Navbar = () => {
           <div className="serch-category">
             <p>
               All Category{" "}
-              {/* <span onClick={handleCategory}>
-                {showCategory ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-              </span> */}
             </p>
             <input type="text" placeholder="Search Your Product" />
           </div>
@@ -40,7 +37,7 @@ const Navbar = () => {
 
             <div className="cart-count">
               <NavLink to="/cart">
-                {items.length > 0 ? <GoDotFill /> : ""}
+                {/* {items.length > 0 ? <GoDotFill /> : ""} */}
 
                 <FaCartShopping />
               </NavLink>

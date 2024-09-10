@@ -9,53 +9,51 @@ export const STATUSES = Object.freeze({
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    name: "products",
+    // name: "products",
     data: [],
-    status: STATUSES.IDLE,
+    // status: STATUSES.IDLE,
   },
   reducers: {
-    addTOCart(state, action) {
-      const existingItem = state.data.find((item) => item.id === action.payload.id);
+    addToCart(state, action) {
+      const product = action.payload;
+      const existingItem = state.data.find((item) => item.id === product.id);
       if (existingItem) {
-        // If the item exists, increase its quantity
-        existingItem.quantity += action.payload.quantity;
+        existingItem.quantity += product.quantity || 1; // Increment quantity
       } else {
-        // If it doesn't exist, add the new item
-        state.data.push({ ...action.payload, quantity: action.payload.quantity });
+        state.data.push({ ...product, quantity: product.quantity || 1 }); // Add new product
       }
     },
     removeCart(state, action) {
-      return state.data = state.data.filter((item) => item.id !== action.payload.id); // Filter data array
+      state.data = state.data.filter((item) => item.id !== action.payload.id); // Filter data array
     },
-    setProduct(state, action) {
-      state.data = action.payload;
-    },
-    setStatus(state, action) {
-      state.status = action.payload;
-    },
+    // setProduct(state, action) {
+    //   state.data = action.payload;
+    // },
+    // setStatus(state, action) {
+    //   state.status = action.payload;
+    // },
   },
 });
 
-export const { addTOCart, removeCart, setProduct, setStatus } =
-  cartSlice.actions;
+export const { addToCart, removeCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
 
 // THUNK
 // in thunk we return async function
 
-export function fetchProduct() {
-  return async function fetchProductThunk(dispatch, getState) {
-    dispatch(setStatus(STATUSES.LOADING));
-    try {
-      const res = await fetch("https://fakestoreapi.com/products");
-      const jsonData = await res.json();
+// export function fetchProduct() {
+//   return async function fetchProductThunk(dispatch, getState) {
+//     dispatch(setStatus(STATUSES.LOADING));
+//     try {
+//       const res = await fetch("https://fakestoreapi.com/products");
+//       const jsonData = await res.json();
 
-      dispatch(setProduct(jsonData)); // Populate state with fetched product data
-      dispatch(setStatus(STATUSES.IDLE));
-    } catch (error) {
-      console.log(error);
-      dispatch(setStatus(STATUSES.ERROR));
-    }
-  };
-}
+//       dispatch(setProduct(jsonData)); // Populate state with fetched product data
+//       dispatch(setStatus(STATUSES.IDLE));
+//     } catch (error) {
+//       console.log(error);
+//       dispatch(setStatus(STATUSES.ERROR));
+//     }
+//   };
+// }
