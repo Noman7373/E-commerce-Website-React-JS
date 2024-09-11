@@ -49,4 +49,11 @@
 .add-icon {
   font-size: 1.9rem;
   cursor: pointer;
+  padding: 0.5rem;
+  box-shadow: rgb(172, 183, 192) 0px 8px 15px;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }

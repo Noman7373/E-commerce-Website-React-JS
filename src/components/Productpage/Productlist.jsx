@@ -20,7 +20,7 @@ const Productlist = () => {
       title: "Product Added",
       description: `${title} has been added to your cart.`,
       status: "success",
-      duration: 3000,
+      duration: 2000,
       isClosable: true,
     });
   };
