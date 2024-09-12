@@ -1,31 +1,61 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { NavLink } from "react-router-dom";
 
-const initialState = {
-  freeDelivery: false,
-  flatRate: false,
-  localArea: false,
-//   subTotal : subTotal,
-};
 const TotalCartAmount = ({ subTotal }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const reducer = (state, action) => {
+    let adjustFinalAmount = action.subTotal || subTotal;
 
-  const reducer = (state ,action) => {
-    switch (action.type) {
-        case "":
-            
-            break;
-    
-        default:
-            break;
+    let newAmount = adjustFinalAmount;
+
+    if (state.freeDelivery) {
+      newAmount -= 5;
     }
-  }
+    if (state.flatRate) {
+      newAmount -= 10;
+    }
+
+    if (state.localArea) {
+      newAmount -= 15;
+    }
+    switch (action.type) {
+      case "TOGGLE_FREE_DELIVERY":
+        return {
+          ...state,
+          freeDelivery: !state.freeDelivery,
+          finalAmount: !state.freeDelivery ? newAmount - 5 : newAmount + 5,
+        };
+      case "TOGGLE_FLATE-RATE":
+        return {
+          ...state,
+          flatRate: !state.flatRate,
+          finalAmount: !state.freeDelivery ? newAmount - 10 : newAmount + 10,
+        };
+      case "TOGGLE_LOCAL_AREA":
+        return {
+          ...state,
+          localArea: !state.localArea,
+          finalAmount: !state.localArea ? newAmount - 15 : newAmount + 15,
+        };
+      default:
+        return state;
+    }
+  };
+  const [state, dispatch] = useReducer(reducer, {
+    finalAmount: subTotal || 0, // Ensure finalAmount starts with subTotal or 0
+    freeDelivery: false,
+    flatRate: false,
+    localArea: false,
+  });
+
+  useEffect(() => {
+    dispatch({ type: "RESET_TOTAL", subTotal }); // Reset total based on the subTotal prop when it changes
+  }, [subTotal]);
   return (
     <>
       <h2>Cart Totals</h2>
       <div className="subtotal">
         <h3>Subtotal</h3>
-        <h4>{subTotal.toFixed(2)}</h4>
+        <h4>${subTotal.toFixed(2)}</h4>
       </div>
       <h3 className="shipping-cart">Shipping</h3>
       <div className="shipping-free">
@@ -53,7 +83,7 @@ const TotalCartAmount = ({ subTotal }) => {
               type="checkbox"
               name="localArea"
               checked={state.localArea}
-              onChange={() => dispatch({ TOGGLE_LOCAL_AREA })}
+              onChange={() => dispatch({ type: "TOGGLE_LOCAL_AREA" })}
             />
             <label htmlFor="localArea">Local Area</label>
           </div>
@@ -67,7 +97,7 @@ const TotalCartAmount = ({ subTotal }) => {
 
       <div className="cartfinal-total">
         <h3>Total</h3>
-        <h4>$1234.00</h4>
+        <h4>${state.finalAmount.toFixed(2)}</h4>
       </div>
 
       <div className="checkout-btn">

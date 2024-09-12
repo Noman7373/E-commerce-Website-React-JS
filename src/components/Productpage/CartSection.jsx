@@ -89,8 +89,8 @@ const CartSection = () => {
           <div className="CartTotal-section">
             {cartItems.length > 0 ? (
               cartItems.map(({ id, image, title, price, quantity }) => (
-                <div className="cart-products-detail">
-                  <div key={id} className="product">
+                <div key={id} className="cart-products-detail">
+                  <div className="product">
                     <img className="item-img" src={image} alt={title} />
                     <h2>{title.slice(0, 22)}...</h2>
                   </div>
@@ -135,14 +135,25 @@ const CartSection = () => {
                 <button onClick={() => handleClearCart()}>Clear Cart</button>
               </div>
             </div>
+            <div className="brand-logos-images">
+              <img src="/exercise.png" alt="adidas-logo" />
+              <img src="/Fashion-logo.webp" alt="fashion-logo" />
+              <img src="/flat-design-clothing.avif" alt="design-clothing" />
+              <img src="/bussiness-logo.avif" alt="bussiness-logo" />
+              <img src="/pants-logo.avif" alt="pants-logo" />
+            </div>
           </div>
 
           <div className="total-amount-section">
             {/* Import the Totalamount Component */}
-            <TotalCartAmount subTotal = {subTotal} />
+            <TotalCartAmount subTotal={subTotal} />
           </div>
         </div>
       </div>
+      {/* <div className="brand-logos-images">
+        <img src="/exercise.png" alt="adidas-logo" />
+        <img src="/Fashion-logo.webp" alt="fashion-logo" />
+      </div> */}
     </section>
   );
 };

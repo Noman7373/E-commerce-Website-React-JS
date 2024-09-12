@@ -1,16 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const STATUSES = Object.freeze({
-  IDLE: "idle",
-  ERROR: "error",
-  LOADING: "loading",
-});
 const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
     data: initialCart,
-    // status: STATUSES.IDLE,
+    
   },
 
   reducers: {

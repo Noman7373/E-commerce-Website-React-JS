@@ -106,6 +106,7 @@
 
 .clear-btn button {
   padding: 0.4rem 2.4rem;
+  font-weight: 600;
   border: 1px solid black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 0.5rem;
@@ -115,7 +116,7 @@
   -o-border-radius: 0.5rem;
 }
 
-/* ===========    Cart Last Buttons Start   ================= */
+/* ===========    Cart Last Buttons END   ================= */
 
 /* ===========     SubTotal Box Start   ================= */
 
@@ -256,4 +257,17 @@
 .empty-cart h1 {
   font-size: 2rem;
   font-weight: 800;
+}
+
+/* ==========   Brand Logo Images Start  =========== */
+
+.brand-logos-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  height: 150px;
+}
+
+.brand-logos-images img {
+  width: 150px;
 }

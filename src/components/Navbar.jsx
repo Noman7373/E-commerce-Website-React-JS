@@ -5,8 +5,9 @@ import { CiHeart, CiUser } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { SlCallOut } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
-import { GoDotFill } from "react-icons/go";
-import { useSelector } from "react-redux";
+// import { GoDotFill } from "react-icons/go";
+// import { useSelector } from "react-redux";
+
 const Navbar = () => {
   // const items = useSelector((state) => state.cart);
   // const [showCategory, setShowCategory] = useState(false);
@@ -14,6 +15,7 @@ const Navbar = () => {
   // function handleCategory() {
   //   setShowCategory((prev) => !prev);
   // }
+
   return (
     <nav>
       <div className="main">
@@ -23,9 +25,7 @@ const Navbar = () => {
         </div>
         <div className="search">
           <div className="serch-category">
-            <p>
-              All Category{" "}
-            </p>
+            <p>All Category </p>
             <input type="text" placeholder="Search Your Product" />
           </div>
           <div className="search-btn">
@@ -37,7 +37,11 @@ const Navbar = () => {
 
             <div className="cart-count">
               <NavLink to="/cart">
-                {/* {items.length > 0 ? <GoDotFill /> : ""} */}
+                {/* {items.length > 0 && (
+                  <span>
+                    <GoDotFill />
+                  </span>
+                )} */}
 
                 <FaCartShopping />
               </NavLink>
@@ -56,16 +60,36 @@ const Navbar = () => {
         </div>
         <div className="home-links">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "activeNavbar" : "")}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="">About Us</NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "activeNavbar" : "")}
+            >
+              About Us
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink
+              to="/shop"
+              className={({ isActive }) => (isActive ? "activeNavbar" : "")}
+            >
+              Shop
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Contact Us</NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "activeNavbar" : "")}
+            >
+              Contact Us
+            </NavLink>
           </li>
         </div>
         <div className="contact">

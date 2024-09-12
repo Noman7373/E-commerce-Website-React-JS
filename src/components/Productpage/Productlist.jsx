@@ -1,7 +1,7 @@
 import "./productlist.css";
 import { IoStarSharp } from "react-icons/io5";
 
-import { addToCart } from "../../store/cartSlice";
+import { addToCart} from "../../store/cartSlice";
 import { useToast } from "@chakra-ui/react";
 import { LuShoppingCart } from "react-icons/lu";
 import { useDispatch } from "react-redux";
