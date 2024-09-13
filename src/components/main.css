@@ -34,7 +34,7 @@
   padding: 0.5rem 1.5rem;
   border: none;
   color: #f3e1e4;
-  background-color: #ec546a;
+  background-color: #ed7a5d;
   font-size: 1.2rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   cursor: pointer;
@@ -68,10 +68,11 @@
   height: 100px;
   border-top: none;
   padding: 1rem;
-  border-bottom: 2px dotted #ec546a;
-  border-right: 2px dotted #ec546a;
-  border-left: 2px dotted #ec546a;
-  box-shadow: #f7adb8 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-bottom: 2px dotted #ed7a5d;
+  border-right: 2px dotted #ed7a5d;
+  border-left: 2px dotted #ed7a5d;
+  box-shadow: #ed7a5d 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .free-delivery {
@@ -92,4 +93,110 @@ span img {
 
 .delivery .free {
   font-weight: 850;
+}
+
+@media (max-width: 640px) {
+  .main-section {
+    height: 500px;
+    width: 360px;
+    margin-top: 2rem;
+    padding: 0rem 0.4rem;
+  }
+
+  .main-content {
+    display: flex;
+    /* align-items: center; */
+    /* text-align: center; */
+  }
+
+  .main-text {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-text h1 {
+    font-size: 1rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: #535050;
+    font-weight: 600;
+  }
+
+  .main-text p {
+    /* width: 100%; */
+    font-size: 1rem;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+  .shop-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 0.5rem;
+    border: none;
+    color: #f3e1e4;
+    background-color: #ed7a5d;
+    font-size: 0.7rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    cursor: pointer;
+    box-shadow: rgba(247, 146, 88, 0.587) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 0.7rem;
+    -webkit-border-radius: 0.7rem;
+    -moz-border-radius: 0.7rem;
+    -ms-border-radius: 0.7rem;
+    -o-border-radius: 0.7rem;
+  }
+
+  .main-img img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* ==================   Shipping Box Start  ========== */
+
+  .about-shipping {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shipping {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 150px;
+    border-top: none;
+    padding: 1rem;
+    gap: 1rem;
+    border-bottom: 2px dotted #ed7a5d;
+    border-right: 2px dotted #ed7a5d;
+    border-left: 2px dotted #ed7a5d;
+    box-shadow: #ed7a5d 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .free-delivery {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .delivery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .delivery .free {
+    font-weight: 650;
+    font-size: 0.8rem;
+  }
 }

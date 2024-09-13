@@ -14,7 +14,7 @@
   height: 80px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid #ec546a;
+  border-bottom: 2px solid #ed7a5d;
 }
 
 .cart-info {
@@ -87,7 +87,7 @@
 }
 
 .Continue-Shopping button {
-  background-color: #ec546a;
+  background-color: #ed7a5d;
   font-size: 1.2rem;
   padding: 0.4rem 1rem;
   color: #fff;
@@ -123,7 +123,7 @@
 .total-amount-section {
   height: 440px;
   width: 320px;
-  border: 1px solid #ec546a;
+  border: 1px solid #ed7a5d;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

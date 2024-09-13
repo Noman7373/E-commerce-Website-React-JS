@@ -38,7 +38,7 @@ const Main = () => {
             </span>
             <div className="delivery">
               <span className="free">Quick Payment</span>
-              <span>100% Secure Payment</span>
+              <span>100% Secure $</span>
             </div>
           </div>
 

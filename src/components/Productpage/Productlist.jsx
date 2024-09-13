@@ -1,7 +1,7 @@
 import "./productlist.css";
 import { IoStarSharp } from "react-icons/io5";
 
-import { addToCart} from "../../store/cartSlice";
+import { addToCart } from "../../store/cartSlice";
 import { useToast } from "@chakra-ui/react";
 import { LuShoppingCart } from "react-icons/lu";
 import { useDispatch } from "react-redux";
@@ -43,8 +43,9 @@ const Productlist = () => {
             </div>
 
             <div className="product-details">
-              <h2>{title.slice(0, 25)}...</h2>
-              <p>USD {price}</p>
+              <div className="tilte-product">
+                <h2>{title.slice(0, 15)}...</h2>
+              </div>
               <div className="addtocart-btn">
                 <span
                   className="add-icon"
@@ -53,6 +54,9 @@ const Productlist = () => {
                   <LuShoppingCart />
                 </span>
               </div>
+            </div>
+            <div className="price-div">
+              <p>USD {price}</p>
             </div>
           </div>
         ))

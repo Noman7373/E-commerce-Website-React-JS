@@ -25,7 +25,7 @@ nav {
 }
 
 .logo h1 {
-  color: #ec546a;
+  color: #ed7a5d;
   font-size: 1.9rem;
 }
 
@@ -39,7 +39,7 @@ nav {
   display: flex;
   text-align: center;
   align-items: center;
-  border: 1px solid #ec546a;
+  border: 1px solid #ed7a5d;
   width: 450px;
   height: 38px;
   padding-left: 1rem;
@@ -74,7 +74,7 @@ nav {
 .search-btn button {
   padding: 0.7rem 1.2rem;
   color: #fff;
-  background-color: #ec546a;
+  background-color: #ed7a5d;
   border: none;
   margin-left: 1.5rem;
   cursor: pointer;
@@ -94,9 +94,13 @@ nav {
 
 /* -------    Nav section - 2 --------- */
 
+.nav-links span {
+  display: none;
+}
+
 .nav-links {
   height: 65px;
-  background-color: #ec546a;
+  background-color: #ed7a5d;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -118,7 +122,7 @@ nav {
 }
 
 .browse-category span {
-  color: #ec546a;
+  color: #ed7a5d;
 }
 
 .home-links {
@@ -132,7 +136,7 @@ nav {
 
 .home-links li {
   font-size: 1.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   color: #ffffffc5;
 
@@ -156,4 +160,188 @@ nav {
   color: #fff;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  nav {
+    width: 360px;
+
+    padding: 0rem 0.2rem;
+  }
+  .main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .logo h1 {
+    color: #ed7a5d;
+    font-size: 1.2rem;
+    display: none;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .serch-category {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 1px solid #ed7a5d;
+    width: 230px;
+    height: 35px;
+    justify-content: space-between;
+  }
+
+  .serch-category p {
+    display: flex;
+    align-items: center;
+
+    font-size: small;
+    display: flex;
+  }
+
+  .serch-category input {
+    padding: 0.2rem 0.5rem;
+
+    font-size: 1rem;
+
+    outline: none;
+    border: none;
+    &::placeholder {
+      color: #758694;
+    }
+  }
+
+  .serch-category span {
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    text-align: center;
+  }
+
+  .search-btn button {
+    padding: 0.3rem 0.5rem;
+    color: #fff;
+    background-color: #ed7a5d;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    -webkit-border-radius: 0.7rem;
+    -moz-border-radius: 0.7rem;
+    -ms-border-radius: 0.7rem;
+    -o-border-radius: 0.7rem;
+  }
+
+  .icons {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 0.9rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  /* -------    Nav section - 2 --------- */
+
+  .nav-links {
+    height: 65px;
+    background-color: #ed7a5d;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .browse-category {
+    background-color: #fff;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+  }
+
+  .browse-category h1 {
+    color: #758694;
+    display: none;
+  }
+
+  .browse-category span {
+    color: #ed7a5d;
+  }
+
+  .nav-links {
+    padding: 0rem 0.2rem;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links span {
+    font-size: 2rem;
+  }
+  .home-links {
+    top: 18.9rem;
+    display: flex;
+    flex-direction: column;
+    left: -100%;
+    display: none;
+  }
+
+  .nav-links-display li {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #ffffffc5;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.nav-links-display {
+  z-index: 10;
+  left: -10.2%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #ed7a5d;
+  top: 16.4rem;
+  height: 85vh;
+  width: 25rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact .call-icon {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.call-details span {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
 }

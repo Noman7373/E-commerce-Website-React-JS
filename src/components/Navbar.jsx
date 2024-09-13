@@ -1,14 +1,22 @@
 // import React, { useState } from "react";
 import "./navbar.css";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { IoIosMenu, IoMdArrowDropdown } from "react-icons/io";
 import { CiHeart, CiUser } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { SlCallOut } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { MdCancelPresentation } from "react-icons/md";
 // import { GoDotFill } from "react-icons/go";
 // import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const [navbarLinksShow, setNavbarLinksSHow] = useState(false);
+
+  const handleNavbar = () => {
+    setNavbarLinksSHow((prev) => !prev);
+  };
+
   // const items = useSelector((state) => state.cart);
   // const [showCategory, setShowCategory] = useState(false);
 
@@ -26,7 +34,7 @@ const Navbar = () => {
         <div className="search">
           <div className="serch-category">
             <p>All Category </p>
-            <input type="text" placeholder="Search Your Product" />
+            <input type="text" placeholder="Search Product" />
           </div>
           <div className="search-btn">
             <button>Search</button>
@@ -50,6 +58,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="nav-links">
+        <span onClick={() => handleNavbar()}>
+          {navbarLinksShow ? <MdCancelPresentation /> : <IoIosMenu />}
+        </span>
         <div className="browse-category">
           <h1>
             Browse Categories{" "}
@@ -58,7 +69,7 @@ const Navbar = () => {
             </span>
           </h1>
         </div>
-        <div className="home-links">
+        <div className={navbarLinksShow ? "nav-links-display" : "home-links"}>
           <li>
             <NavLink
               to="/"
