@@ -32,3 +32,33 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: start;
 }
+
+@media (max-width: 640px) {
+  .about-introduction {
+    width: 360px;
+    padding: 0.4rem 0.4rem;
+    height: 550px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-introduction h1 {
+    font-size: 1.2rem;
+  }
+
+  .about-text p {
+    /* line-height: 2; */
+    font-size: 0.8rem;
+    /* text-align: center; */
+    /* font-weight: 650; */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* text-align: start; */
+  }
+
+  .paragraph-2 {
+    display: none;
+  }
+}

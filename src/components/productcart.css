@@ -41,7 +41,6 @@ h1 hr {
   justify-content: center;
   gap: 2rem;
   margin-top: 2rem;
-  padding: 0 1rem;
 }
 
 .marketing-box {
@@ -116,7 +115,17 @@ h1 hr {
     width: 360px;
     padding: 0rem 0.4rem;
     margin-top: 4rem;
-    height: 8600px;
+    height: 2400px;
+  }
+
+  .cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 0.7rem;
+    margin-top: 2rem;
+    /* padding: 0 1rem; */
   }
 
   /* ====== Marketing Poster ======= */

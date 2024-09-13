@@ -256,6 +256,10 @@ nav {
 
   /* -------    Nav section - 2 --------- */
 
+  .nav-links span {
+    display: block;
+  }
+  
   .nav-links {
     height: 65px;
     background-color: #ed7a5d;

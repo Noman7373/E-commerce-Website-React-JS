@@ -29,7 +29,7 @@ const AboutUs = () => {
           From fashion to electronics, we strive to provide exceptional value,
           fast delivery, and a seamless shopping experience for every customer.
         </p>
-        <p>
+        <p className="paragraph-2">
           Get ready for unbeatable savings with our exclusive promotion! For a
           limited time, enjoy big discounts on a wide range of top-qualit <br />
           products, from fashion and accessories to electronics and home

@@ -27,48 +27,50 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="footer-details">
-            <h3>
-              My Account <br /> <hr />
-            </h3>
-            <li>
-              <a href="#">My Account</a>
-            </li>
-            <li>
-              <a href="#">Wishlist</a>
-            </li>
-            <li>
-              <a href="#">Login</a>
-            </li>
-            <li>
-              <a href="#">New Product</a>
-            </li>
-          </div>
+          <div className="bottom-section">
+            <div className="footer-details">
+              <h3>
+                My Account <br /> <hr />
+              </h3>
+              <li>
+                <a href="#">My Account</a>
+              </li>
+              <li>
+                <a href="#">Wishlist</a>
+              </li>
+              <li>
+                <a href="#">Login</a>
+              </li>
+              <li>
+                <a href="#">New Product</a>
+              </li>
+            </div>
 
-          <div className="footer-details">
-            <h3>
-              Support <br /> <hr />
-            </h3>
-            <li>
-              <a href="#">Facebook</a>
-            </li>
-            <li>
-              <a href="#">Help Centre</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
-          </div>
+            <div className="footer-details">
+              <h3>
+                Support <br /> <hr />
+              </h3>
+              <li>
+                <a href="#">Facebook</a>
+              </li>
+              <li>
+                <a href="#">Help Centre</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
+            </div>
 
-          <div className="footer-details">
-            <h3>
-              Contach Info <br /> <hr />
-            </h3>
-            <li>Call :</li>
-            <li>+000000000</li>
-            <li>Current Address :</li>
-            <li>Baharin</li>
-            <li>Mail : abc@gmail.com</li>
+            <div className="footer-details">
+              <h3>
+                Contach Info <br /> <hr />
+              </h3>
+              <li>Call :</li>
+              <li>+000000000</li>
+              <li>Current Address :</li>
+              <li>Baharin</li>
+              <li>Mail : abc@gmail.com</li>
+            </div>
           </div>
         </div>
         <hr />

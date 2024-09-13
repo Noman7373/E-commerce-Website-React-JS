@@ -44,16 +44,16 @@ const Productlist = () => {
 
             <div className="product-details">
               <div className="tilte-product">
-                <h2>{title.slice(0, 15)}...</h2>
+                <h2>{title.slice(0, 20)}...</h2>
               </div>
-              <div className="addtocart-btn">
+              {/* <div className="addtocart-btn"> */}
                 <span
                   className="add-icon"
                   onClick={() => handleAddToCart(id, image, title, price)}
                 >
                   <LuShoppingCart />
                 </span>
-              </div>
+              {/* </div> */}
             </div>
             <div className="price-div">
               <p>USD {price}</p>

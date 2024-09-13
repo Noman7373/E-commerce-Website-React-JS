@@ -26,7 +26,7 @@ const Contactus = () => {
                 </span>
                 Location
               </h3>
-              <p>Lorem ipsum dolor, sit amet consectetur......</p>
+              <p>Lorem ipsum </p>
             </div>
 
             <div className="adrress-info">
@@ -55,20 +55,20 @@ const Contactus = () => {
           <form>
             <div className="input-fields">
               <input
-                type="email"
+                type="name"
                 autoComplete="name"
                 placeholder="Enter Your Name"
                 required
               />
               <input
-                type="number"
-                autoComplete="name"
+                type="email"
+                autoComplete="email"
                 placeholder="Enter Your Email"
                 required
               />
               <input
-                type="text"
-                autoComplete="name"
+                type="number"
+                autoComplete="number"
                 placeholder="Enter Your Phone Number"
                 required
               />
