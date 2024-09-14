@@ -71,6 +71,10 @@
 }
 
 @media (max-width: 640px) {
+
+  footer {
+    width: 360px;
+  }
   .footer-main {
     width: 360px;
     padding: 0rem 0.4rem;

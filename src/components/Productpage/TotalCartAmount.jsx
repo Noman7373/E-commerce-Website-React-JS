@@ -8,34 +8,34 @@ const TotalCartAmount = ({ subTotal }) => {
     let newAmount = adjustFinalAmount;
 
     if (state.freeDelivery) {
-      newAmount -= 5;
+      newAmount -= 2;
     }
     if (state.flatRate) {
-      newAmount -= 10;
+      newAmount -= 1;
     }
 
-    if (state.localArea) {
-      newAmount -= 15;
-    }
+    // if (state.localArea) {
+    //   newAmount -= 15;
+    // }
     switch (action.type) {
       case "TOGGLE_FREE_DELIVERY":
         return {
           ...state,
           freeDelivery: !state.freeDelivery,
-          finalAmount: !state.freeDelivery ? newAmount - 5 : newAmount + 5,
+          finalAmount: !state.freeDelivery ? newAmount - 2 : newAmount + 2,
         };
       case "TOGGLE_FLATE-RATE":
         return {
           ...state,
           flatRate: !state.flatRate,
-          finalAmount: !state.freeDelivery ? newAmount - 10 : newAmount + 10,
+          finalAmount: !state.freeDelivery ? newAmount - 1: newAmount + 1,
         };
-      case "TOGGLE_LOCAL_AREA":
-        return {
-          ...state,
-          localArea: !state.localArea,
-          finalAmount: !state.localArea ? newAmount - 15 : newAmount + 15,
-        };
+      // case "TOGGLE_LOCAL_AREA":
+      //   return {
+      //     ...state,
+      //     localArea: !state.localArea,
+      //     finalAmount: !state.localArea ? newAmount - 15 : newAmount + 15,
+      //   };
       default:
         return state;
     }
@@ -44,7 +44,7 @@ const TotalCartAmount = ({ subTotal }) => {
     finalAmount: subTotal || 0, // Ensure finalAmount starts with subTotal or 0
     freeDelivery: false,
     flatRate: false,
-    localArea: false,
+    // localArea: false,
   });
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const TotalCartAmount = ({ subTotal }) => {
             />
             <label htmlFor="flatRate">Flat Rate</label>
           </div>
-          <div className="checkboxes">
+          {/* <div className="checkboxes">
             <input
               type="checkbox"
               name="localArea"
@@ -86,18 +86,18 @@ const TotalCartAmount = ({ subTotal }) => {
               onChange={() => dispatch({ type: "TOGGLE_LOCAL_AREA" })}
             />
             <label htmlFor="localArea">Local Area</label>
-          </div>
+          </div> */}
         </div>
         <div className="checkboxes-amount">
-          <p>$5</p>
-          <p>$10</p>
-          <p>$15</p>
+          <p>$2</p>
+          <p>$1</p>
+          {/* <p>$1</p> */}
         </div>
       </div>
 
       <div className="cartfinal-total">
         <h3>Total</h3>
-        <h4>${state.finalAmount.toFixed(2)}</h4>
+        <h4>${subTotal.toFixed(2)}</h4>
       </div>
 
       <div className="checkout-btn">

@@ -5,12 +5,30 @@ import { addToCart } from "../../store/cartSlice";
 import { useToast } from "@chakra-ui/react";
 import { LuShoppingCart } from "react-icons/lu";
 import { useDispatch } from "react-redux";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks/useData";
+import { ImSpinner } from "react-icons/im";
+import { TbError404 } from "react-icons/tb";
 
 const Productlist = () => {
   const toast = useToast();
   const dispatch = useDispatch();
-  const { data } = useData();
+  const { data, isLoading, isError } = useData();
+
+  if (isLoading) {
+    return (
+      <div className="loader">
+        <ImSpinner />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="error">
+        <TbError404 />
+      </div>
+    );
+  }
 
   const handleAddToCart = (id, image, title, price) => {
     const product = { id, image, title, price, quantity: 1 };
@@ -35,7 +53,7 @@ const Productlist = () => {
             </div>
 
             <div className="product-rating">
-              {Array(Math.round(rating.rate)) // Assuming rating object has a "rate" field
+              {Array(Math.round(rating.rate))
                 .fill()
                 .map((_, index) => (
                   <IoStarSharp key={index} />
@@ -47,12 +65,12 @@ const Productlist = () => {
                 <h2>{title.slice(0, 20)}...</h2>
               </div>
               {/* <div className="addtocart-btn"> */}
-                <span
-                  className="add-icon"
-                  onClick={() => handleAddToCart(id, image, title, price)}
-                >
-                  <LuShoppingCart />
-                </span>
+              <span
+                className="add-icon"
+                onClick={() => handleAddToCart(id, image, title, price)}
+              >
+                <LuShoppingCart />
+              </span>
               {/* </div> */}
             </div>
             <div className="price-div">

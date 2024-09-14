@@ -1,9 +1,25 @@
-
+import { useState } from "react";
 import "./productcart.css";
 import Productlist from "./Productpage/Productlist";
 import { FaApple } from "react-icons/fa";
+import { useData } from "../hooks/useData";
 
 const Productcart = () => {
+  const { data  } = useData();
+  const [filterData, setFilterData] = useState(null);
+
+  const handleSearch = (e) => {
+    const searchProduct = e.target.value;
+    if (searchProduct === "") {
+      setFilterData(null);
+    }
+
+    const productFilter = data?.filter((item) =>
+      item.title.toLOwerCase().includes(searchProduct.toLOwerCase())
+    );
+    setFilterData(productFilter)
+  };
+
   return (
     <section className="main-cart">
       <div className="cart-title">
@@ -16,6 +32,22 @@ const Productcart = () => {
         <p>Best Sellers</p>
         <p>Trending</p>
         <p>New Arrival</p>
+      </div>
+      <div className="filter-section">
+        <div className="input-cart-section">
+          <input
+            type="text"
+            placeholder="Search Product"
+            onChange={handleSearch}
+          />
+        </div>
+        <div className="select-section">
+          <select name="sort" id="sort-select">
+            {/* <label htmlFor="sort-select">Sort</label> */}
+            <option value="a-z">a-z</option>
+            <option value="z-a">z-a</option>
+          </select>
+        </div>
       </div>
       <div className="cart-items">
         <Productlist />
@@ -51,7 +83,11 @@ const Productcart = () => {
           </div>
         </div>
         <div className="marketing-shopping-image">
-          <img className="marketing-shopping-image" src="/marketingImage.jpg" alt="marketing-banner-image" />
+          <img
+            className="marketing-shopping-image"
+            src="/marketingImage.jpg"
+            alt="marketing-banner-image"
+          />
         </div>
       </div>
     </section>

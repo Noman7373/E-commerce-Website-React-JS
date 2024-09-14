@@ -1,28 +1,20 @@
-// import React, { useState } from "react";
 import "./navbar.css";
-import { IoIosMenu, IoMdArrowDropdown } from "react-icons/io";
+import { IoIosMenu } from "react-icons/io";
 import { CiHeart, CiUser } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { SlCallOut } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { MdCancelPresentation } from "react-icons/md";
-// import { GoDotFill } from "react-icons/go";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [navbarLinksShow, setNavbarLinksSHow] = useState(false);
+  const cartItems = useSelector((state) => state.cart.data);
 
   const handleNavbar = () => {
     setNavbarLinksSHow((prev) => !prev);
   };
-
-  // const items = useSelector((state) => state.cart);
-  // const [showCategory, setShowCategory] = useState(false);
-
-  // function handleCategory() {
-  //   setShowCategory((prev) => !prev);
-  // }
 
   return (
     <nav>
@@ -31,29 +23,15 @@ const Navbar = () => {
           <img src="/online-shopping.png" alt="shop-logo" />
           <h1>Shop</h1>
         </div>
-        <div className="search">
-          <div className="serch-category">
-            <p>All Category </p>
-            <input type="text" placeholder="Search Product" />
-          </div>
-          <div className="search-btn">
-            <button>Search</button>
-          </div>
-          <div className="icons">
-            <CiUser />
-            <CiHeart />
+        <div className="icons">
+          <CiUser />
+          <CiHeart />
 
-            <div className="cart-count">
-              <NavLink to="/cart">
-                {/* {items.length > 0 && (
-                  <span>
-                    <GoDotFill />
-                  </span>
-                )} */}
-
-                <FaCartShopping />
-              </NavLink>
-            </div>
+          <div className="cart-count">
+            <NavLink to="/cart">
+              {cartItems.length > 0 ? <span>{cartItems.length}</span> : ""}
+              <FaCartShopping />
+            </NavLink>
           </div>
         </div>
       </div>
@@ -61,15 +39,11 @@ const Navbar = () => {
         <span onClick={() => handleNavbar()}>
           {navbarLinksShow ? <MdCancelPresentation /> : <IoIosMenu />}
         </span>
-        <div className="browse-category">
-          <h1>
-            Browse Categories{" "}
-            <span>
-              <IoMdArrowDropdown />
-            </span>
-          </h1>
-        </div>
-        <div className={navbarLinksShow ? "nav-links-display" : "home-links"}>
+
+        <div
+          onClick={handleNavbar}
+          className={navbarLinksShow ? "nav-links-display" : "home-links"}
+        >
           <li>
             <NavLink
               to="/"
@@ -117,4 +91,5 @@ const Navbar = () => {
   );
 };
 
+// export { handleSearch };
 export default Navbar;
