@@ -12,7 +12,7 @@ import { TbError404 } from "react-icons/tb";
 const Productlist = () => {
   const toast = useToast();
   const dispatch = useDispatch();
-  const { data, isLoading, isError } = useData();
+  const { isLoading, isError  ,filterData} = useData();
 
   if (isLoading) {
     return (
@@ -45,8 +45,8 @@ const Productlist = () => {
 
   return (
     <>
-      {Array.isArray(data) && data.length > 0 ? (
-        data.map(({ id, image, title, price, rating }) => (
+      {Array.isArray(filterData) && filterData.length > 0 ? (
+        filterData.map(({ id, image, title, price, rating }) => (
           <div key={id} className="item-cart">
             <div className="product-img">
               <img className="product-picture" src={image} alt={title} />

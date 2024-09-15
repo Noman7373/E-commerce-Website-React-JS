@@ -63,12 +63,13 @@
   cursor: pointer;
   height: 40px;
   padding: 0rem 0.5rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .loader {
@@ -136,8 +137,8 @@
   }
 
   .add-icon {
-    font-size: 0.7rem;
+    font-size: 1rem;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0rem 0.6rem;
   }
 }

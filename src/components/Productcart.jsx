@@ -1,24 +1,10 @@
-import { useState } from "react";
 import "./productcart.css";
 import Productlist from "./Productpage/Productlist";
 import { FaApple } from "react-icons/fa";
 import { useData } from "../hooks/useData";
 
 const Productcart = () => {
-  const { data  } = useData();
-  const [filterData, setFilterData] = useState(null);
-
-  const handleSearch = (e) => {
-    const searchProduct = e.target.value;
-    if (searchProduct === "") {
-      setFilterData(null);
-    }
-
-    const productFilter = data?.filter((item) =>
-      item.title.toLOwerCase().includes(searchProduct.toLOwerCase())
-    );
-    setFilterData(productFilter)
-  };
+  const { handleSearch, handleSorting } = useData();
 
   return (
     <section className="main-cart">
@@ -42,11 +28,15 @@ const Productcart = () => {
           />
         </div>
         <div className="select-section">
-          <select name="sort" id="sort-select">
-            {/* <label htmlFor="sort-select">Sort</label> */}
-            <option value="a-z">a-z</option>
-            <option value="z-a">z-a</option>
-          </select>
+          <form action="#">
+            <select name="sort" id="sort" onChange={handleSorting}>
+              <option value="sort">Sort by</option>
+              <option value="a - z">A - Z</option>
+              <option value="z - a">Z - A</option>
+              <option value="lowest">Lowest Price</option>
+              <option value="highest">Highest Price</option>
+            </select>
+          </form>
         </div>
       </div>
       <div className="cart-items">

@@ -1,17 +1,42 @@
-import { createContext, useEffect, useState } from "react";
-// import reducer from "../Context/Reducer";
+import { createContext, useEffect, useReducer, useState } from "react";
 export const ProductsList = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  // const [filterData, setFilter]
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  // const [searchItem, setSearchItem] = useState("");
+  const [filterData, setFilterData] = useState([]);
 
-  // const handleSearch = (e) => {
-  //   setSearchItem(e.target.value);
-  // };
+  const handleSearch = (e) => {
+    const searchProduct = e.target.value;
+    if (searchProduct === "") {
+      setFilterData(data);
+    } else {
+      const productFilter = data?.filter((item) =>
+        item.title.toLowerCase().includes(searchProduct.toLowerCase())
+      );
+      setFilterData(productFilter);
+    }
+  };
+
+  // /============  Sorting function   ===========/
+
+  const handleSorting = (event) => {
+    let valueSort = event.target.value;
+    let sortedData;
+    if (valueSort === "lowest") {
+      sortedData = [...data].sort((a, b) => a.price - b.price);
+    } else if (valueSort === "highest") {
+      sortedData = [...data].sort((a, b) => b.price - a.price);
+    } else if (valueSort === "a - z") {
+      sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
+    } else if (valueSort === "z - a") {
+      sortedData = [...data].sort((a, b) => b.title.localeCompare(a.title));
+    } else if (valueSort === "sort") {
+      sortedData = [...data];
+    }
+    setFilterData(sortedData);
+  };
 
   useEffect(() => {
     const fatchData = async () => {
@@ -20,6 +45,7 @@ export const ProductProvider = ({ children }) => {
         const res = await fetch("https://fakestoreapi.com/products");
         const jsonData = await res.json();
         setData(jsonData);
+        setFilterData(jsonData);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -33,11 +59,12 @@ export const ProductProvider = ({ children }) => {
     <ProductsList.Provider
       value={{
         data,
+        filterData,
         isLoading,
         isError,
-        // searchItem,
-        // setSearchItem,
-        // handleSearch,
+        handleSearch,
+        handleSorting,
+        handleSorting,
       }}
     >
       {children}
@@ -45,15 +72,60 @@ export const ProductProvider = ({ children }) => {
   );
 };
 
+
+// ======================  Dispatch Method For Sort  =============
+
 // const initialState = {
-//   isLoading: false,
-//   isError: false,
+//   sortingProductValue: "lowest",
+//   data: [],
 // };
 
-// const [state, dispatch] = useReducer(reducer, initialState);
-// dispatch({type : "SET_LOADING"})
-// isLoading =false
-// console.log(jsonData);
+// const productPrice = (state, action) => {
+//   switch (action.type) {
+//     case "GET_SORTING-VALUE":
+//       console.log("Sorting value:", action.payload); // Log sorting value for debugging
+//       return {
+//         ...state,
+//         sortingProductValue: action.payload,
+//       };
 
-// STATUSES.IDLE
-// dispatch({type : "API_ERROR"})
+//     case "SORTING_PRODUCT":
+//       let newSortData;
+
+//       const { data, sortingProductValue } = state;
+
+//       let tempSortProduct = [data];
+
+//       const finalSortingProduct = (a, b) => {
+//         if (sortingProductValue === "lowest") {
+//           return a.price - b.price;
+//         }
+
+//         if (sortingProductValue === "highest") {
+//           return b.price - a.price;
+//         }
+
+//         if (sortingProductValue === "a-z") {
+//           return a.title.localeCompare(b.title);
+//         }
+
+//         if (sortingProductValue === "z-a") {
+//           return b.title.localeCompare(a.title);
+//         }
+//       };
+
+//       newSortData = tempSortProduct.sort(finalSortingProduct);
+
+//       return {
+//         ...state,
+//         data: newSortData,
+//       };
+//     default:
+//       return state;
+//   }
+// };
+
+// const handleSorting = (event) => {
+//   let userValue = event.target.value.toLowerCase();
+//   dispatch({ type: "GET_SORTING-VALUE", payload: userValue });
+// };

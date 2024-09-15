@@ -2,16 +2,22 @@ import { useContext } from "react";
 import { ProductsList } from "../components/Context/Providercontext";
 
 export const useData = () => {
-  const { data, isLoading, isError } =
-    useContext(ProductsList);
-  return {
+  const {
     data,
+    filterData,
     isLoading,
     isError,
-    // searchItem,
-    // setSearchItem,
-    // handleSearch,
+    handleSearch,
+    handleSorting,
+ 
+  } = useContext(ProductsList);
+  return {
+    data,
+    filterData,
+    isLoading,
+    isError,
+    handleSearch,
+    handleSorting,
+    
   };
 };
-
-// export default useData;
