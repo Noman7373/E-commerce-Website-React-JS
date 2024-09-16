@@ -1,6 +1,4 @@
 import "./productlist.css";
-import { IoStarSharp } from "react-icons/io5";
-
 import { addToCart } from "../../store/cartSlice";
 import { useToast } from "@chakra-ui/react";
 import { LuShoppingCart } from "react-icons/lu";
@@ -52,19 +50,20 @@ const Productlist = () => {
               <img className="product-picture" src={image} alt={title} />
             </div>
 
-            <div className="product-rating">
-              {Array(Math.round(rating.rate))
-                .fill()
-                .map((_, index) => (
-                  <IoStarSharp key={index} />
-                ))}
+            <div
+              className={
+                rating.rate > 3 ? "product-rating" : "product-rating-rating"
+              }
+            >
+              <p>{rating.rate}</p>
             </div>
+           
 
             <div className="product-details">
               <div className="tilte-product">
                 <h2>{title.slice(0, 20)}...</h2>
               </div>
-              {/* <div className="addtocart-btn"> */}
+              
               <span
                 className="add-icon"
                 onClick={() => handleAddToCart(id, image, title, price)}
@@ -79,7 +78,9 @@ const Productlist = () => {
           </div>
         ))
       ) : (
-        <h2>No Product Available</h2>
+        <div className="no-product">
+          <h1>No Product Available</h1>
+        </div>
       )}
     </>
   );

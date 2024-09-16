@@ -46,10 +46,11 @@ const Productcart = () => {
         <div className="marketing-text">
           <h1>Shopping Online</h1>
           <p>
-            To support this entire community, we've made <br /> lots of
-            improvments to the Play Store this <br /> year. For example, we made
-            it even easier <br /> to discover all that play.
+            To support this entire community, we've made lots of improvements to
+            the Play Store this year. For example, we made it even easier to
+            discover all that play.
           </p>
+
           <div className="marketing-logo">
             <div className="playStore-logo">
               <img src="/playstore.png" alt="playstore-logo" />

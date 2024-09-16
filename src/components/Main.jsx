@@ -12,7 +12,7 @@ const Main = () => {
           </h1>
           <p>
             Luxury fashionable clothing and stationary <br /> items flat lay on
-            white background - stock <br /> photo
+            white background - stock photo.
           </p>
           <button className="shop-btn">Shop Now</button>
         </div>

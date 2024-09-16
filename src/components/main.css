@@ -1,41 +1,44 @@
 .main-section {
-  height: 500px;
+  height: 600px;
   margin-top: 2rem;
+  padding: 0rem 4.5rem;
 }
 
 .main-content {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  /* height: 100%; */
+  justify-content: space-between;
 }
 
 .main-text {
   height: 350px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+  margin-top: 5rem;
 }
 
 .main-text h1 {
   font-size: 3rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #535050;
+  font-weight: 600;
 }
 
 .main-text p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
 
 .shop-btn {
+  margin-top: 5rem;
   width: 35%;
   padding: 0.5rem 1.5rem;
   border: none;
   color: #f3e1e4;
   background-color: #ed7a5d;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   cursor: pointer;
   box-shadow: rgba(247, 146, 88, 0.587) 0px 19px 38px,
@@ -71,8 +74,8 @@
   border-bottom: 2px dotted #ed7a5d;
   border-right: 2px dotted #ed7a5d;
   border-left: 2px dotted #ed7a5d;
-  box-shadow: #ed7a5d 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  /* box-shadow: #ed7a5d 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
 }
 
 .free-delivery {
@@ -93,123 +96,47 @@ span img {
 
 .delivery .free {
   font-weight: 850;
+  font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .main-section {
-    height: 500px;
-    width: 100%;
-    margin-top: 2rem;
-    padding: 0rem 0.4rem;
-  }
-
-  .main-content {
-    display: flex;
-    /* align-items: center; */
-    /* text-align: center; */
-  }
-
-  .main-text {
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .main-text h1 {
-    font-size: 1rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    color: #535050;
-    font-weight: 600;
-  }
-
-  .main-text p {
-    /* width: 100%; */
-    font-size: 1rem;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-  }
-
-  .shop-btn {
-    margin-top: 1rem;
-    padding: 0.5rem 0.5rem;
-    border: none;
-    color: #f3e1e4;
-    background-color: #ed7a5d;
-    font-size: 0.7rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    cursor: pointer;
-    box-shadow: rgba(247, 146, 88, 0.587) 0px 19px 38px,
-      rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    border-radius: 0.7rem;
-    -webkit-border-radius: 0.7rem;
-    -moz-border-radius: 0.7rem;
-    -ms-border-radius: 0.7rem;
-    -o-border-radius: 0.7rem;
-  }
-
-  .main-img img {
-    width: 200px;
-    height: 200px;
-  }
-
-  /* ==================   Shipping Box Start  ========== */
-
-  .about-shipping {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .shipping {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 150px;
-    border-top: none;
-    padding: 1rem;
-    gap: 1rem;
-    border-bottom: 2px dotted #ed7a5d;
-    border-right: 2px dotted #ed7a5d;
-    border-left: 2px dotted #ed7a5d;
-    box-shadow: #ed7a5d 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  }
-
-  .free-delivery {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .delivery {
-    display: flex;
-    flex-direction: column;
-  }
-
-  span img {
-    height: 20px;
-    width: 20px;
-  }
-
-  .delivery .free {
-    font-weight: 650;
-    font-size: 0.8rem;
-  }
+.delivery span {
+  font-size: 1.5rem;
 }
 
-
-@media screen and (max-width: 475px){
+/* ===========   MEDIA QUERY   ==================*/
+/* Styles for small devices */
+@media (max-width: 580px) {
   .main-section {
     display: none;
   }
-.main-content {
-  display: none;
 }
-.about-shipping {
-  display: none;
+
+/* Styles for small tablets */
+@media (min-width: 575px) and (max-width: 768px) {
+  .main-section {
+    display: none;
+  }
 }
+
+/* Styles for tablets and small laptops */
+@media (min-width: 768px) and (max-width: 992px) {
+  .main-section {
+    display: none;
+  }
+}
+
+/* Styles for laptops and desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main-section {
+    padding: 0rem 3rem;
+    height: 600px;
+  }
+}
+
+/* Styles for large desktops */
+@media (min-width: 1200px) {
+  .main-section {
+    padding: 0rem 3rem;
+    height: 600px;
+  }
 }

@@ -62,13 +62,7 @@ const Navbar = () => {
             <CiHeart />
             <div className="cart-count">
               <NavLink to="/cart">
-                {cartItems.length > 0 ? (
-                  <span>
-                    <FaCircle />
-                  </span>
-                ) : (
-                  ""
-                )}
+                {cartItems.length > 0 ? <p>{cartItems.length}</p> : <p>0</p>}
                 <FaCartShopping />
               </NavLink>
             </div>
