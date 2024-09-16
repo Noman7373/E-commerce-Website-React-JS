@@ -61,7 +61,7 @@ const Productlist = () => {
 
             <div className="product-details">
               <div className="tilte-product">
-                <h2>{title.slice(0, 20)}...</h2>
+                <h2>{title.slice(0, 10)}...</h2>
               </div>
               
               <span

@@ -55,7 +55,7 @@ const TotalCartAmount = ({ subTotal }) => {
       <h2>Cart Totals</h2>
       <div className="subtotal">
         <h3>Subtotal</h3>
-        <h4>${subTotal.toFixed(2)}</h4>
+        <h3>${subTotal.toFixed(2)}</h3>
       </div>
       <h3 className="shipping-cart">Shipping</h3>
       <div className="shipping-free">

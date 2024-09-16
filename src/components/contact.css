@@ -6,7 +6,7 @@
 .about-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 2rem;
+  margin-top: 7rem;
 }
 
 .about-intro {
@@ -18,11 +18,13 @@
 .about-intro h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .about-intro p {
+  font-size: 1.5rem;
   font-weight: 600;
+  /* min-width: 300px; */
 }
 
 .adrress-info {
@@ -42,10 +44,11 @@
   align-items: center;
   gap: 0.8rem;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .adrress-info span {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ed7a5d;
 }
 
@@ -58,7 +61,7 @@
 }
 
 .contact-form-fields h1 {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -70,7 +73,7 @@
 .input-fields input {
   width: 300px;
   height: 50px;
-  font-size: 1rem;
+  font-size: 2rem;
   padding: 0rem 1rem;
   border: 2px solid #000;
   background-color: transparent;
@@ -84,13 +87,15 @@
 }
 
 .input-fields input::placeholder {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 .input-fields input:focus {
   border: 2px solid #ed7a5d;
 }
 
 .input-fields textarea {
+  font-size: 2rem;
   border: 2px solid black;
   outline: none;
   padding: 0rem 0.5rem;
@@ -107,13 +112,16 @@
 }
 
 .input-fields textarea::placeholder {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .input-fields button {
+  width: 100px;
   background-color: #ed7a5d;
   color: #fff;
-  padding: 0.4rem 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
   font-weight: 600;
   border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -126,52 +134,82 @@
 
 /* ========== Media Quary For Mobiles  ===============*/
 
-@media (max-width: 768px) {
+/* Your styles for phones */
+@media (min-width: 475px) and (max-width: 576px) {
   .about-container {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-around;
+    margin-top: 5rem;
+    padding: 0 1.5rem;
+  }
 
-    width: 100%;
-    padding: 0rem 0.4rem;
-    height: 400px;
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
 
   .about-intro h1 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 
   .about-intro p {
     font-weight: 600;
-    font-size: 0.9rem;
-    text-align: start;
-    width: 100%;
-  }
-
-  .contact-info {
-    display: flex;
-    gap: 1rem;
   }
 
   .adrress-info {
     display: flex;
-   
+    flex-direction: column;
     gap: 0.5rem;
   }
 
-  .adrress-info h3 {
-    font-size: 1rem;
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .input-fields textarea {
-    border: 2px solid black;
+  .adrress-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+  }
+
+  .adrress-info span {
+    font-size: 1.5rem;
+    color: #ed7a5d;
+  }
+
+  /* ==============    Contact Input Fields Started  ==================== */
+
+  .contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-fields h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .input-fields input {
+    width: 250px;
+    height: 40px;
+    font-size: 1.4rem;
+    padding: 0rem 1rem;
+    border: 2px solid #000;
+    background-color: transparent;
     outline: none;
-    padding: 0rem 0.5rem;
-    width: 300px;
     color: #000;
-    font-size: 0.9rem;
     border-radius: 0.5rem;
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
@@ -179,67 +217,127 @@
     -o-border-radius: 0.5rem;
   }
 
+  .input-fields input::placeholder {
+    font-weight: 600;
+  }
+  .input-fields input:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea {
+    font-size: 1.5rem;
+    border: 2px solid black;
+    outline: none;
+    padding: 0rem 0.5rem;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields textarea:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea::placeholder {
+    font-weight: 600;
+  }
+
   .input-fields button {
+    width: 100px;
+    font-size: 1.5rem;
     background-color: #ed7a5d;
     color: #fff;
     padding: 0.4rem 1rem;
-    width: 100px;
+    font-weight: 600;
     border-radius: 0.6rem;
     -webkit-border-radius: 0.6rem;
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
   }
-  
 }
 
-
-
-
-@media screen and (max-width: 475px) {
+/* Your styles for small devices */
+@media (min-width: 576px) and (max-width: 768px) {
   .about-container {
     display: flex;
+    justify-content: space-around;
+    margin-top: 7rem;
+    padding: 0rem 1rem;
+  }
+
+  .about-intro {
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0rem 0.7rem;
-    height: 700px;
+    gap: 2rem;
   }
 
   .about-intro h1 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 2rem;
   }
 
   .about-intro p {
+    font-size: 1.5rem;
     font-weight: 600;
-    font-size: 1.2rem;
-    text-align: start;
-    width: 100%;
-  }
-
-  .contact-info {
-    display: flex;
-    gap: 1rem;
   }
 
   .adrress-info {
     display: flex;
-   
+    flex-direction: column;
     gap: 0.5rem;
   }
 
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .adrress-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
     font-size: 1.5rem;
   }
 
-  .input-fields textarea {
-    border: 2px solid black;
-    outline: none;
-    padding: 0rem 0.5rem;
+  .adrress-info span {
+    font-size: 2rem;
+    color: #ed7a5d;
+  }
+
+  /* ==============    Contact Input Fields Started  ==================== */
+
+  .contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-fields h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .input-fields input {
     width: 300px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 0rem 1rem;
+    border: 2px solid #000;
+    background-color: transparent;
+    outline: none;
     color: #000;
-    font-size: 0.9rem;
     border-radius: 0.5rem;
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
@@ -247,11 +345,433 @@
     -o-border-radius: 0.5rem;
   }
 
+  .input-fields input::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .input-fields input:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea {
+    font-size: 2rem;
+    border: 2px solid black;
+    outline: none;
+    padding: 0rem 0.5rem;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields textarea:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
   .input-fields button {
+    width: 100px;
     background-color: #ed7a5d;
     color: #fff;
+    font-size: 1.5rem;
     padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+  }
+}
+
+/* Your styles for tablets */
+@media (min-width: 768px) and (max-width: 992px) {
+  .about-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7rem;
+    padding: 0rem 1rem;
+  }
+
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-intro h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .about-intro p {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .adrress-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .adrress-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .adrress-info span {
+    font-size: 2rem;
+    color: #ed7a5d;
+  }
+
+  /* ==============    Contact Input Fields Started  ==================== */
+
+  .contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-fields h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .input-fields input {
+    width: 300px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 0rem 1rem;
+    border: 2px solid #000;
+    background-color: transparent;
+    outline: none;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields input::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .input-fields input:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea {
+    font-size: 2rem;
+    border: 2px solid black;
+    outline: none;
+    padding: 0rem 0.5rem;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields textarea:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .input-fields button {
     width: 100px;
+    background-color: #ed7a5d;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+  }
+}
+
+/* Your styles for desktops */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .about-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7rem;
+    padding: 0rem 1rem;
+  }
+
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-intro h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .about-intro p {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .adrress-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .adrress-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .adrress-info span {
+    font-size: 2rem;
+    color: #ed7a5d;
+  }
+
+  /* ==============    Contact Input Fields Started  ==================== */
+
+  .contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-fields h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .input-fields input {
+    width: 300px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 0rem 1rem;
+    border: 2px solid #000;
+    background-color: transparent;
+    outline: none;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields input::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .input-fields input:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea {
+    font-size: 2rem;
+    border: 2px solid black;
+    outline: none;
+    padding: 0rem 0.5rem;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields textarea:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .input-fields button {
+    width: 100px;
+    background-color: #ed7a5d;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+  }
+}
+
+/* Your styles for large desktops */
+@media (min-width: 1200px) {
+  .about-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7rem;
+    padding: 0rem 1rem;
+  }
+
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-intro h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .about-intro p {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .adrress-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .adrress-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .adrress-info span {
+    font-size: 2rem;
+    color: #ed7a5d;
+  }
+
+  /* ==============    Contact Input Fields Started  ==================== */
+
+  .contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-fields h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .input-fields input {
+    width: 300px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 0rem 1rem;
+    border: 2px solid #000;
+    background-color: transparent;
+    outline: none;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields input::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .input-fields input:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea {
+    font-size: 2rem;
+    border: 2px solid black;
+    outline: none;
+    padding: 0rem 0.5rem;
+    color: #000;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .input-fields textarea:focus {
+    border: 2px solid #ed7a5d;
+  }
+
+  .input-fields textarea::placeholder {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .input-fields button {
+    width: 100px;
+    background-color: #ed7a5d;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
     border-radius: 0.6rem;
     -webkit-border-radius: 0.6rem;
     -moz-border-radius: 0.6rem;

@@ -14,8 +14,8 @@ const Contactus = () => {
           <div className="about-title">
             <h1>Let's Get On Touch</h1>
             <p>
-              Shop top-quality products at great prices. <br /> Enjoy a seamless
-              and satisfying online shopping <br /> experience.
+              Shop top-quality products at great prices.Enjoy a seamless
+              and satisfying online shopping experience.
             </p>
           </div>
           <div className="contact-info">
@@ -26,7 +26,7 @@ const Contactus = () => {
                 </span>
                 Location
               </h3>
-              <p>Lorem ipsum </p>
+              <p>Lorem ipsum.............. </p>
             </div>
 
             <div className="adrress-info">

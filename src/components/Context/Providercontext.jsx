@@ -64,14 +64,12 @@ export const ProductProvider = ({ children }) => {
         isError,
         handleSearch,
         handleSorting,
-        handleSorting,
       }}
     >
       {children}
     </ProductsList.Provider>
   );
 };
-
 
 // ======================  Dispatch Method For Sort  =============
 

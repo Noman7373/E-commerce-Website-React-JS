@@ -34,35 +34,201 @@
   text-align: start;
 }
 
-@media (max-width: 768px) {
+/* ============  Media Query  ===================== */
+
+/* Your styles for phones */
+@media (min-width: 475px) and (max-width: 575.98px) {
   .about-introduction {
-    width: 100%;
-    padding: 0.4rem 1rem;
-    height: 750px;
-    margin-top: 2rem;
+    height: 100%;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
+    padding: 0rem 2rem;
+  }
+
+  .about-introduction video {
+    width: 100%;
   }
 
   .about-introduction h1 {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .about-introduction hr {
+    height: 0.1rem;
+    background-color: #ed7a5d;
+    width: 20rem;
   }
 
   .about-text p {
-
-    font-size: 01rem;
-  
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-size: 1.2rem;
+    font-weight: 650;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .paragraph-2 {
-    display: none;
+    text-align: start;
   }
 }
 
+/* Your styles for small devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .about-introduction {
+    height: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0rem 2rem;
+  }
 
-@media screen and (max-width: 475px) {
-  
+
+  .about-introduction video {
+    width: 100%;
+  }
+
+
+  .about-introduction h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .about-introduction hr {
+    height: 0.1rem;
+    background-color: #ed7a5d;
+    width: 20rem;
+  }
+
+  .about-text p {
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-size: 1.2rem;
+    font-weight: 650;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: start;
+  }
+}
+
+/* Your styles for tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .about-introduction {
+    height: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0rem 2rem;
+  }
+
+  .about-introduction h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .about-introduction video {
+    width: 100%;
+  }
+
+  .about-introduction hr {
+    height: 0.1rem;
+    background-color: #ed7a5d;
+    width: 20rem;
+  }
+
+  .about-text p {
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-size: 1.2rem;
+    font-weight: 650;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: start;
+  }
+}
+
+/* Your styles for desktops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .about-introduction {
+    height: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0rem 1rem;
+  }
+
+  .about-introduction video {
+    width: 100%;
+  }
+
+  .about-introduction h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .about-introduction hr {
+    height: 0.1rem;
+    background-color: #ed7a5d;
+    width: 20rem;
+  }
+
+  .about-text p {
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-size: 1.2rem;
+    font-weight: 650;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: start;
+  }
+}
+
+/* Your styles for large desktops */
+@media (min-width: 1200px) {
+  .about-introduction {
+    height: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0rem 1rem;
+  }
+
+  .about-introduction video {
+    width: 50%;
+  }
+
+  .about-introduction h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .about-introduction hr {
+    height: 0.1rem;
+    background-color: #ed7a5d;
+    width: 20rem;
+  }
+
+  .about-text p {
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-size: 1.2rem;
+    font-weight: 650;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: start;
+  }
 }

@@ -62,7 +62,7 @@ const CartSection = () => {
               src="/long-sleeve-shirt.png"
               alt="product-icon"
             />
-            <h3>Product Detail</h3>
+            <h2>Product Detail</h2>
           </div>
 
           <div className="cart-info">
@@ -71,17 +71,17 @@ const CartSection = () => {
               src="/best-price.png"
               alt="price-icon"
             />
-            <h3>Price</h3>
+            <h2>Price</h2>
           </div>
 
           <div className="cart-info">
             <img className="cart-images" src="/all.png" alt="totalPrice-icon" />
-            <h3>Total</h3>
+            <h2>Total</h2>
           </div>
 
           <div className="cart-info">
             <img className="cart-images" src="/eye.png" alt="eye-icon" />
-            <h3>Quantity</h3>
+            <h2>Quantity</h2>
           </div>
         </div>
 

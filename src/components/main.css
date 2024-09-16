@@ -1,7 +1,7 @@
 .main-section {
   height: 600px;
   margin-top: 2rem;
-  padding: 0rem 4.5rem;
+  padding: 0rem 5rem;
 }
 
 .main-content {
@@ -136,7 +136,7 @@ span img {
 /* Styles for large desktops */
 @media (min-width: 1200px) {
   .main-section {
-    padding: 0rem 3rem;
-    height: 600px;
+    padding: 0rem 4.3rem;
+    height: 100%;
   }
 }

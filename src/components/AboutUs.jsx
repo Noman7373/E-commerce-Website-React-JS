@@ -22,7 +22,7 @@ const AboutUs = () => {
           height="200"
           poster="shop-video"
         ></video>
-       <div className="about-text">
+       {/* <div className="about-text">
        <p>
           Welcome to our e-commerce store, where we offer a curated selection of
           high-quality products designed to meet your everyday needs. <br />{" "}
@@ -34,7 +34,7 @@ const AboutUs = () => {
           products, from fashion and accessories to electronics and home
           essentials.
         </p>
-       </div>
+       </div> */}
       </div>
     </>
   );

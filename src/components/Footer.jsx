@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="footer-details">
             <h3>About Us</h3>
             <p>
-              Copyright holders have the right to <br /> control most uses of
-              their works. In <br /> some circumstances, it's possible to <br />{" "}
-              use a copyright-protected work <br /> without infiring their.{" "}
+              Copyright holders have the right to control most uses of
+              their works.In some circumstances,it's possible to {" "}
+              use a copyright-protected work without infiring their.{" "}
             </p>
             <div className="follow-us">
               <h3>Follow Us </h3>
@@ -67,8 +67,7 @@ const Footer = () => {
               </h3>
               <li>Call :</li>
               <li>+000000000</li>
-              <li>Current Address :</li>
-              <li>Baharin</li>
+              <li>Current Address :  Baharin</li>
               <li>Mail : abc@gmail.com</li>
             </div>
           </div>
@@ -77,7 +76,7 @@ const Footer = () => {
         <div className="copy-right">
           <p>Copyright 2024, All Rights Reserved</p>
           <p>
-            Designed By <strong> Noman Ahmed</strong>
+            Created By <strong> Noman Ahmed</strong>
           </p>
         </div>
       </div>
