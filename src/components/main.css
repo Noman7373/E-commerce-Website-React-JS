@@ -95,10 +95,10 @@ span img {
   font-weight: 850;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .main-section {
     height: 500px;
-    width: 360px;
+    width: 100%;
     margin-top: 2rem;
     padding: 0rem 0.4rem;
   }
@@ -199,4 +199,17 @@ span img {
     font-weight: 650;
     font-size: 0.8rem;
   }
+}
+
+
+@media screen and (max-width: 475px){
+  .main-section {
+    display: none;
+  }
+.main-content {
+  display: none;
+}
+.about-shipping {
+  display: none;
+}
 }

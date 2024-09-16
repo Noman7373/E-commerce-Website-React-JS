@@ -26,16 +26,13 @@ const AboutUs = () => {
        <p>
           Welcome to our e-commerce store, where we offer a curated selection of
           high-quality products designed to meet your everyday needs. <br />{" "}
-          From fashion to electronics, we strive to provide exceptional value,
-          fast delivery, and a seamless shopping experience for every customer.
+          From fashion to electronics.
         </p>
         <p className="paragraph-2">
           Get ready for unbeatable savings with our exclusive promotion! For a
           limited time, enjoy big discounts on a wide range of top-qualit <br />
           products, from fashion and accessories to electronics and home
-          essentials. Take advantage of our fast shipping and seamless shopping <br />
-          experience. Don’t wait—these deals won’t last long, and it’s the
-          perfect time to grab your favorites at the best prices!
+          essentials.
         </p>
        </div>
       </div>

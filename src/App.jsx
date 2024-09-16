@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./components/pages/AppLayout";
 import Main from "./components/Main";
-// import Productlist from "./components/Productpage/Productlist";
+
 import Productcart from "./components/Productcart";
 import CartSection from "./components/Productpage/CartSection";
-// import AboutUs from "./components/AboutUs";
+
 import Contactus from "./components/Contactus";
 import AboutUs from "./components/AboutUs";
 

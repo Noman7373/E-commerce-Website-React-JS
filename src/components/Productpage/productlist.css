@@ -93,7 +93,7 @@
 }
 /* ========= Media For Moblile  ============ */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .item-cart {
     width: 150px;
     cursor: pointer;

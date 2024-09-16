@@ -13,94 +13,135 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 80px;
-  padding: 0rem 0.3rem;
+  height: 70px;
+  padding: 0rem 4rem;
+  background-color: #ed7a5d;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 3rem;
 }
 
 .logo {
+  height: 100%;
   display: flex;
 }
+
 .logo img {
-  height: 80px;
+  height: 70px;
+  text-align: center;
   width: 80px;
 }
 
-.logo h1 {
-  color: #ed7a5d;
-  font-size: 1.9rem;
+ul {
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+}
+
+li {
+  font-size: 1.3rem;
+  font-weight: 600;
+  list-style: none;
+  letter-spacing: 0.1rem;
 }
 
 .icons {
-  width: 100px;
-  font-size: 1.5rem;
+  width: 80px;
+  font-size: 2rem;
   display: flex;
   align-items: center;
-
+  justify-content: space-between;
   gap: 0.9rem;
   cursor: pointer;
 }
 
-/* -------    Nav section - 2 --------- */
+.cart-count span {
+  font-size: 1rem;
+  color: #fff;
+}
 
-.nav-links span {
+.menu-icons {
   display: none;
 }
 
-.nav-links {
-  height: 65px;
-  background-color: #ed7a5d;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+/* -------    Nav section - 2 --------- */
 
-.home-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.home-links li {
-  list-style-type: none;
-}
-
-.home-links li {
-  font-size: 1.5rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-decoration: none;
-  color: #ffffffc5;
-
-  &:hover {
-    color: #fff;
-  }
-}
-
-.contact {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.contact .call-icon {
-  color: #fff;
-  font-size: 1.7rem;
-}
-
-.call-details span {
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 640px) {
-  nav {
-    width: 360px;
-
-    padding: 0rem 0.2rem;
-  }
-  .main {
+@media screen and (max-width: 999px) {
+  /* Base styles for ul (side navigation menu) */
+  ul {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide nav initially (off-screen) */
+    height: 100vh;
+    width: 250px;
+    background-color: #ed7a5d; /* You can choose any background color */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 3rem;
+    transition: left 0.3s ease; /* Slide-in transition */
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Show ul when active */
+  ul.active {
+    left: 0;
+  }
+
+  /* li elements styling */
+  li {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    line-height: 1;
+    list-style-type: none; /* Remove bullet points */
+  }
+
+  /* Optional: Adding hover effect to li elements */
+  li:hover {
+    background-color: #333; /* Darken on hover */
+  }
+
+  .icons {
+    width: 180px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  }
+
+  .menu-icons {
+    display: block;
+    right: 3%;
+    top: 0.6%;
+    font-size: 3rem;
+    position: absolute;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    padding: 0rem 0.2rem;
   }
 
   .logo {
@@ -112,104 +153,81 @@ nav {
     width: 50px;
   }
 
-  .logo h1 {
-    color: #ed7a5d;
-    font-size: 1.2rem;
-    display: none;
-  }
-
-  /* .search {
-    display: flex;
-    align-items: center;
-
-    justify-content: space-between;
-  } */
-
   .icons {
-    font-size: 1.2rem;
+    width: 100px;
+    font-size: 2rem;
     display: flex;
-    /* gap: 0.9rem; */
     cursor: pointer;
-    /* display: none; */
   }
 
   .cart-count {
     display: flex;
+    font-size: 2rem;
   }
 
-  /* -------    Nav section - 2 --------- */
-
-  .nav-links span {
+  .menu-icons {
     display: block;
-    color: #fff;
+    right: 3%;
+    position: absolute;
+    /* top: 0.6%; */
+    font-size: 3rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 475px) {
+
+  nav {
+    width: 100%;
+    padding: 0rem 0.2rem;
   }
 
-  .nav-links {
-    height: 65px;
-    background-color: #ed7a5d;
+  .main {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 70px;
+    /* position: sticky;
+    width: 100%; */
+    /* padding: 0rem 4rem; */
+    /* background-color: #ed7a5d; */
   }
-
-  .nav-links {
-    padding: 0rem 0.2rem;
-    height: 50px;
+  
+  .container {
     display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
     justify-content: space-between;
+
   }
 
-  .nav-links span {
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .icons {
+    width: 100px;
+    font-size: 2rem;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .cart-count {
+    display: flex;
     font-size: 2rem;
   }
-  .home-links {
-    top: 18.9rem;
-    display: flex;
-    flex-direction: column;
-    left: -100%;
-    display: none;
+
+  .menu-icons {
+    position: absolute;
+    right: 3%;
+    top: 0.5%;
+    font-size: 2.5rem;
+    height: 3rem;
   }
-
-  .nav-links-display li {
-    width: 100%;
-    padding: 0.4rem 0.6rem;
-    list-style-type: none;
-    font-size: 1.2rem;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: none;
-    color: #ffffffc5;
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-.nav-links-display {
-  z-index: 10;
-  left: -10.2%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: #ed7a5d;
-  top: 16.4rem;
-  height: 85vh;
-  width: 25rem;
-}
-
-.contact {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.contact .call-icon {
-  color: #fff;
-  font-size: 1rem;
-}
-
-.call-details span {
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  font-size: 0.7rem;
 }

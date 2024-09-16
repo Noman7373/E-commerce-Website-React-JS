@@ -12,7 +12,7 @@ import { TbError404 } from "react-icons/tb";
 const Productlist = () => {
   const toast = useToast();
   const dispatch = useDispatch();
-  const { isLoading, isError  ,filterData} = useData();
+  const { isLoading, isError, filterData } = useData();
 
   if (isLoading) {
     return (

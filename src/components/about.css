@@ -4,7 +4,7 @@
 } */
 
 .about-introduction {
-  height: 1000px;
+  height: 900px;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,7 @@
 }
 
 .about-text p {
+  letter-spacing: 1.5px;
   line-height: 2;
   font-size: 1.2rem;
   font-weight: 650;
@@ -33,11 +34,11 @@
   text-align: start;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .about-introduction {
-    width: 360px;
-    padding: 0.4rem 0.4rem;
-    height: 550px;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    height: 750px;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -50,15 +51,18 @@
   }
 
   .about-text p {
-    /* line-height: 2; */
-    font-size: 0.8rem;
-    /* text-align: center; */
-    /* font-weight: 650; */
+
+    font-size: 01rem;
+  
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    /* text-align: start; */
   }
 
   .paragraph-2 {
     display: none;
   }
+}
+
+
+@media screen and (max-width: 475px) {
+  
 }

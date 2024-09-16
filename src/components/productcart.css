@@ -1,5 +1,5 @@
 .main-cart {
-  height: 1800px;
+  height: 1500px;
   margin-top: 8rem;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@ h1 hr {
     outline: none;
   }
   &::after {
-    content: "▼"; 
+    content: "▼";
     font-size: 0.75rem;
     color: #333;
     position: absolute;
@@ -181,12 +181,12 @@ h1 hr {
 
 /* ========= Media For Moblile  ============ */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .main-cart {
-    width: 360px;
+    width: 100%;
     padding: 0rem 0.4rem;
     margin-top: 4rem;
-    height: 2550px;
+    height: 1350px;
   }
 
   .cart-items {
@@ -330,3 +330,13 @@ h1 hr {
     height: auto;
   }
 }
+
+
+
+
+@media screen and (max-width: 475px) {
+  .main-cart {
+    height: 2300px;
+  }
+}
+
