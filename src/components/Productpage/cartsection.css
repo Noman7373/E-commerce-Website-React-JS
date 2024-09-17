@@ -281,7 +281,7 @@
 }
 
 /* Your styles for phones */
-@media (min-width: 450px) and (max-width: 576px) {
+@media (min-width: 300px) and (max-width: 576px) {
   .main-cart-cart {
     width: 100%;
     margin-top: 1rem;

@@ -135,7 +135,7 @@
 /* ========== Media Quary For Mobiles  ===============*/
 
 /* Your styles for phones */
-@media (min-width: 475px) and (max-width: 576px) {
+@media (min-width: 300px) and (max-width: 576px) {
   .about-container {
     display: flex;
     justify-content: space-around;

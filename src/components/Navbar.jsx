@@ -58,7 +58,11 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="icons">
-            <CiUser />
+            <NavLink to="/signup">
+              <button>
+                <CiUser />
+              </button>
+            </NavLink>
             <CiHeart />
             <div className="cart-count">
               <NavLink to="/cart">

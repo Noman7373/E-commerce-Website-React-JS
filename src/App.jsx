@@ -7,6 +7,11 @@ import CartSection from "./components/Productpage/CartSection";
 
 import Contactus from "./components/Contactus";
 import AboutUs from "./components/AboutUs";
+import Signup from "./Authantication/signup/Signup";
+import Signin from "./Authantication/signin/Signin";
+import Forgotpassword from "./Authantication/forgotpassword/Forgotpassword";
+import Forgotpasswordsent from "./Authantication/forgotSent/Forgotpasswordsent";
+import Resetpassword from "./Authantication/resetpassword/Resetpassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +45,26 @@ function App() {
         {
           path: "/contact",
           element: <Contactus />,
+        },
+        {
+          path: "/signup",
+          element: <Signup />,
+        },
+        {
+          path: "/signin",
+          element: <Signin />,
+        },
+        {
+          path: "/forgot-password",
+          element: <Forgotpassword />,
+        },
+        {
+          path: "/forgotpassword-sent",
+          element: <Forgotpasswordsent />,
+        },
+        {
+          path: "/reset-password",
+          element: <Resetpassword />,
         },
       ],
     },

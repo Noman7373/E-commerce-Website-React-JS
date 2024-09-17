@@ -80,7 +80,7 @@
 }
 
 /* Your styles for phones */
-@media (min-width: 450px) and (max-width: 576px) {
+@media (min-width: 300px) and (max-width: 576px) {
   .footer-main {
     margin-top: 3rem;
     padding: 1rem;

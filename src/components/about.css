@@ -37,7 +37,7 @@
 /* ============  Media Query  ===================== */
 
 /* Your styles for phones */
-@media (min-width: 475px) and (max-width: 575.98px) {
+@media (min-width: 300px) and (max-width: 575.98px) {
   .about-introduction {
     height: 100%;
     margin-top: 5rem;

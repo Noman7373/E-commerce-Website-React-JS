@@ -148,7 +148,7 @@
 /* ========= Media For Moblile  ============ */
 
 /* Mobile styles */
-@media (min-width: 375px) and (max-width: 576px) {
+@media (min-width: 300px) and (max-width: 576px) {
   .item-cart {
     width: 200px;
     cursor: pointer;

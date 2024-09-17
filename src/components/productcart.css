@@ -186,7 +186,7 @@ h1 hr {
 /* ========= Media For Moblile  ============ */
 
 /* Styles for small devices */
-@media (min-width: 375px) and (max-width: 577px) {
+@media (min-width: 300px) and (max-width: 577px) {
   .main-cart {
     height: 100%;
     margin-top: 4rem;
