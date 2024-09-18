@@ -62,3 +62,22 @@ export const verifyEmailSuccess = async ({ token }) => {
     throw new Error(errorMessage);
   }
 };
+
+
+// ==================================  FORGOT PASSWORD  ===========================
+
+export const sendForgotMail = async ({ email }) => {
+  try {
+    const { data } = await Axios.post(`${USER_URL}/user/forgot-password`, {
+      email,
+    });
+    console.log(token);
+    return data;
+  } catch (error) {
+    const errorMessage = error.response?.data?.message || "An error occurred";
+    throw new Error(errorMessage);
+  }
+};
+
+// ================================== FORGOT PASSWORD SUCCESS ===============================
+

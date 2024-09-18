@@ -18,6 +18,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import Registeremail from "./Authantication/Emailsend/Registeremail";
 import Verification from "./Authantication/verifcationsuccess/Verification";
 import ErrorPage from "./components/Errorpage/ErrorPage";
+import ResetpasswordSuccess from "./Authantication/Newpasswordset/ResetpasswordSuccess";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -68,11 +69,15 @@ const router = createBrowserRouter([
         element: <Registeremail />,
       },
       {
+        path: "/email-verify/:token",
+        element: <Verification />,
+      },
+      {
         path: "/forgot-password",
         element: <Forgotpassword />,
       },
       {
-        path: "/forgotpassword-sent",
+        path: "/forgot-success",
         element: <Forgotpasswordsent />,
       },
       {
@@ -80,8 +85,8 @@ const router = createBrowserRouter([
         element: <Resetpassword />,
       },
       {
-        path: "/email-verify/:token",
-        element: <Verification />,
+        path : "/reset-success",
+        element : <ResetpasswordSuccess />
       },
       {
         path: "*",
@@ -319,3 +324,16 @@ export default App;
 //       <Spinner />
 
 // step 13  ======================================= Forgot Password  =============================
+
+// export const sendForgotMail = async ({ email }) => {
+//   try {
+//     const { data } = await Axios.post(`${USER_URL}/user/forgot-password`, {
+//       email,
+//     });
+//     console.log(token);
+//     return data;
+//   } catch (error) {
+//     const errorMessage = error.response?.data?.message || "An error occurred";
+//     throw new Error(errorMessage);
+//   }
+// };
