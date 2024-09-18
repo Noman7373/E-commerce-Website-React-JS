@@ -7,6 +7,7 @@ import { useData } from "../../hooks/useData";
 import { ImSpinner } from "react-icons/im";
 import { TbError404 } from "react-icons/tb";
 
+
 const Productlist = () => {
   const toast = useToast();
   const dispatch = useDispatch();
@@ -57,13 +58,12 @@ const Productlist = () => {
             >
               <p>{rating.rate}</p>
             </div>
-           
 
             <div className="product-details">
               <div className="tilte-product">
                 <h2>{title.slice(0, 10)}...</h2>
               </div>
-              
+
               <span
                 className="add-icon"
                 onClick={() => handleAddToCart(id, image, title, price)}
@@ -82,6 +82,7 @@ const Productlist = () => {
           <h1>No Product Available</h1>
         </div>
       )}
+    
     </>
   );
 };

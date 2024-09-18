@@ -2,6 +2,7 @@ import "./productcart.css";
 import Productlist from "./Productpage/Productlist";
 import { FaApple } from "react-icons/fa";
 import { useData } from "../hooks/useData";
+import { NavLink } from "react-router-dom";
 
 const Productcart = () => {
   const { handleSearch, handleSorting } = useData();
@@ -15,7 +16,10 @@ const Productcart = () => {
         </h1>
       </div>
       <div className="sale-category">
-        <p>Best Sellers</p>
+        <NavLink to="/bestseller">
+          {" "}
+          <p>Best Sellers</p>
+        </NavLink>
         <p>Trending</p>
         <p>New Arrival</p>
       </div>

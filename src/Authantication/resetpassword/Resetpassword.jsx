@@ -1,14 +1,13 @@
 import {
   Box,
   Button,
-  Card,
+ 
   Center,
-  Checkbox,
+
   Container,
   FormControl,
   FormErrorMessage,
   FormLabel,
-  HStack,
   Input,
   Stack,
   Text,
@@ -30,7 +29,7 @@ const Resetpassword = () => {
         <Formik
           initialValues={{
             password: "",
-            password: "",
+            repeatpassword: "",
           }}
           onSubmit={(values) => {
             console.log("formValues", values);

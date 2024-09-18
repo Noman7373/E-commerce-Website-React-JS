@@ -246,8 +246,8 @@
   }
 
   .input-fields button {
-    width: 100px;
-    font-size: 1.5rem;
+    width: 110px;
+    font-size: 1.3rem;
     background-color: #ed7a5d;
     color: #fff;
     padding: 0.4rem 1rem;
@@ -376,10 +376,10 @@
   }
 
   .input-fields button {
-    width: 100px;
+    width: 120px;
     background-color: #ed7a5d;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 1rem 2rem;
     font-weight: 600;
     border-radius: 0.6rem;
@@ -506,7 +506,7 @@
   }
 
   .input-fields button {
-    width: 100px;
+    width: 150px;
     background-color: #ed7a5d;
     color: #fff;
     font-size: 1.5rem;
@@ -636,7 +636,7 @@
   }
 
   .input-fields button {
-    width: 100px;
+    width: 150px;
     background-color: #ed7a5d;
     color: #fff;
     font-size: 1.5rem;
@@ -766,7 +766,7 @@
   }
 
   .input-fields button {
-    width: 100px;
+    width: 150px;
     background-color: #ed7a5d;
     color: #fff;
     font-size: 1.5rem;

@@ -12,6 +12,7 @@ import Signin from "./Authantication/signin/Signin";
 import Forgotpassword from "./Authantication/forgotpassword/Forgotpassword";
 import Forgotpasswordsent from "./Authantication/forgotSent/Forgotpasswordsent";
 import Resetpassword from "./Authantication/resetpassword/Resetpassword";
+import Bestseller from "./components/Productpage/Bestseller";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ function App() {
         {
           path: "/shop",
           element: <Productcart />,
+        },
+        {
+          path: "/bestseller",
+          element: <Bestseller />,
         },
         {
           path: "/cart",

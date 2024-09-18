@@ -2,6 +2,7 @@
   height: 600px;
   margin-top: 2rem;
   padding: 0rem 5rem;
+
 }
 
 .main-content {
@@ -56,7 +57,7 @@
 }
 
 .about-shipping {
-  margin-top: 2rem;
+  margin-top: 10rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -67,8 +68,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 750px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border-top: none;
   padding: 1rem;
   border-bottom: 2px dotted #ed7a5d;
@@ -129,7 +130,7 @@ span img {
 @media (min-width: 992px) and (max-width: 1199px) {
   .main-section {
     padding: 0rem 3rem;
-    height: 600px;
+    height: 100%;
   }
 }
 
