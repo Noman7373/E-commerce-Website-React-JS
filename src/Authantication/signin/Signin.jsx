@@ -11,29 +11,46 @@ import {
   Input,
   Stack,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import "../../theme/index.js";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { object, string } from "yup";
+import { useMutation } from "react-query";
+import { signInUser } from "../../api/Query/userQuery.js";
 
 const SigninValidationScheme = object({
   email: string().email("Email is invalid").required("Email is required"),
   password: string()
     .min(8, "Password must be at least 8 characters")
-    .required("Pssword is required"),
+    .required("Password is required"),
 });
 
 const Signin = () => {
+  const toast = useToast();
   //  for changes request like DELETE, PUT, PATCH, POST we use [useMutation hook] fro react-query
 
+  const { mutate, isLoading } = useMutation({
+    mutationKey: ["signin"],
+    mutationFn: signInUser,
+    onSuccess: (data) => {},
+    onError: (error) => {
+      toast({
+        title: "Signin Error",
+        description: error.message,
+        status: "error",
+      });
+    },
+  });
+
   return (
-    <Container bg="white" h="456px" p={2} maxW="80vh">
-      <Center minH="100%" flexDirection="column" boxShadow="xs">
-        <Text fontSize="22" fontWeight="500" color="#171717">
+    <Container bg="white" h="500px" p={2} maxW="80vh">
+      <Center h={500} flexDirection="column" boxShadow="xs">
+        <Text fontSize="30" fontWeight="500" color="#171717">
           Welcome to e-Commerce Store
         </Text>
-        <Text fontSize="14" color="gray.600" mt="4">
+        <Text fontSize="20" color="gray.600" mt="4">
           Enter your credentials to access the account
         </Text>
         <Formik
@@ -43,20 +60,21 @@ const Signin = () => {
           }}
           onSubmit={(values) => {
             console.log("formValues", values);
+            mutate(values);
           }}
           validationSchema={SigninValidationScheme}
         >
           {() => (
             <Form>
-              <Stack mt="10" spacing={10} w="300px">
+              <Stack mt="10" spacing={10} w="350px">
                 <Field name="email">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                      <FormLabel fontSize="12px" htmlFor="email">
+                      <FormLabel fontSize="18px" htmlFor="email">
                         Email
                       </FormLabel>
                       <Input
-                        fontSize="12px"
+                        fontSize="18px"
                         fontWeight="500"
                         {...field}
                         id="email"
@@ -65,7 +83,9 @@ const Signin = () => {
                         placeholder="name@gmail.com"
                         autoComplete="email"
                       />
-                      <FormErrorMessage fontSize={12}>{meta.error}</FormErrorMessage>
+                      <FormErrorMessage fontSize={15}>
+                        {meta.error}
+                      </FormErrorMessage>
                     </FormControl>
                   )}
                 </Field>
@@ -73,11 +93,11 @@ const Signin = () => {
                 <Field name="password">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                      <FormLabel fontSize="12px" htmlFor="password">
+                      <FormLabel fontSize="18px" htmlFor="password">
                         Password
                       </FormLabel>
                       <Input
-                        fontSize="12px"
+                        fontSize="18px"
                         fontWeight="500"
                         {...field}
                         id="password"
@@ -86,14 +106,16 @@ const Signin = () => {
                         placeholder="Enter Your Password"
                         autoComplete="password"
                       />
-                      <FormErrorMessage fontSize={12}>{meta.error}</FormErrorMessage>
+                      <FormErrorMessage fontSize={15}>
+                        {meta.error}
+                      </FormErrorMessage>
                     </FormControl>
                   )}
                 </Field>
 
                 <HStack justify="space-between">
                   <Checkbox>
-                    <Text textStyle="p3" fontSize={12}>
+                    <Text textStyle="p3" fontSize={15}>
                       Remember me
                     </Text>
                   </Checkbox>{" "}
@@ -101,7 +123,7 @@ const Signin = () => {
                     {" "}
                     <Text
                       textStyle="p3"
-                      fontSize={12}
+                      fontSize={15}
                       as="span"
                       color="#5F00D9"
                     >
@@ -112,8 +134,9 @@ const Signin = () => {
 
                 <Box>
                   <Button
+                    isLoading={isLoading}
                     w="full"
-                    fontSize={14}
+                    fontSize={18}
                     type="submit"
                     colorScheme="gray"
                   >
@@ -122,7 +145,7 @@ const Signin = () => {
                   <Link to="/signup">
                     <Button
                       variant="outline"
-                      fontSize={14}
+                      fontSize={18}
                       fontWeight={500}
                       mt="3"
                       width="full"

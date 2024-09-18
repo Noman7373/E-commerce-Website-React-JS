@@ -1,9 +1,7 @@
 import {
   Box,
   Button,
- 
   Center,
-
   Container,
   FormControl,
   FormErrorMessage,
@@ -13,17 +11,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import "../../theme/index.js";
-import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 
 const Resetpassword = () => {
   return (
-    <Container bg="white" h="456px" p={2} maxW="488px">
+    <Container bg="white" h="456px" p={2} maxW="450px">
       <Center minH="100%" flexDirection="column" boxShadow="xs">
-        <Text fontSize="22" fontWeight="500" color="#171717">
+        <Text fontSize="30" fontWeight="500" color="#171717">
           Reset Password
         </Text>
-        <Text fontSize="14" color="gray.600" mt="4">
+        <Text fontSize="20" color="gray.600" mt="4">
           Enter you New Password
         </Text>
         <Formik
@@ -38,15 +35,15 @@ const Resetpassword = () => {
         >
           {() => (
             <Form>
-              <Stack mt="10" spacing={10} w="300px">
+              <Stack mt="10" spacing={10} w="350px">
                 <Field name="email">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                      <FormLabel fontSize="12px" htmlFor="password">
+                      <FormLabel fontSize="18px" htmlFor="password">
                         New Password
                       </FormLabel>
                       <Input
-                        fontSize="12px"
+                        fontSize="18px"
                         fontWeight="500"
                         {...field}
                         id="password"
@@ -54,8 +51,9 @@ const Resetpassword = () => {
                         type="password"
                         placeholder="name@gmail.com"
                         autoComplete="password"
+                       
                       />
-                      <FormErrorMessage fontSize={12}>
+                      <FormErrorMessage fontSize={15}>
                         {meta.error}
                       </FormErrorMessage>
                     </FormControl>
@@ -65,20 +63,21 @@ const Resetpassword = () => {
                 <Field name="password">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                      <FormLabel fontSize="12px" htmlFor="repeatpassword">
+                      <FormLabel fontSize="18px" htmlFor="repeatpassword">
                         Repeat New Password
                       </FormLabel>
                       <Input
-                        fontSize="12px"
+                        fontSize="18px"
                         fontWeight="500"
                         {...field}
                         id="repeatpassword"
                         name="repeatpassword"
                         type="password"
+                      
                         placeholder="Enter Repeat Password"
                         autoComplete="password"
                       />
-                      <FormErrorMessage fontSize={12}>
+                      <FormErrorMessage fontSize={15}>
                         {meta.error}
                       </FormErrorMessage>
                     </FormControl>
@@ -88,7 +87,7 @@ const Resetpassword = () => {
                 <Box>
                   <Button
                     w="full"
-                    fontSize={14}
+                    fontSize={18}
                     type="submit"
                     colorScheme="gray"
                   >

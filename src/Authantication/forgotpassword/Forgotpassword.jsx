@@ -23,8 +23,8 @@ const Forgotpassword = () => {
   });
   return (
     <>
-      <Container h="400px">
-        <Center h="400px" >
+      <Container h="550px">
+        <Center h="550px" >
           <Card
             p={{
               base: "4",
@@ -36,10 +36,10 @@ const Forgotpassword = () => {
                 {" "}
                 <Icon boxSize="3rem" as={HiArrowSmallLeft} />
               </Link>
-              <Text mt="4" fontSize={28} fon color="#171717" fontWeight="500">
+              <Text mt="4" fontSize={30} fon color="#171717" fontWeight="500">
                 Forgot Password{" "}
               </Text>
-              <Text textAlign="center" fontSize={14} color="#797E82">
+              <Text textAlign="center" fontSize={18} color="#797E82">
                 Enter your email address for which account you want to reset
                 your password.
               </Text>
@@ -57,18 +57,18 @@ const Forgotpassword = () => {
                     <Field name="email">
                       {({ field, meta }) => (
                         <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                          <FormLabel fontSize={12} htmlFor="email">
+                          <FormLabel fontSize={18} htmlFor="email">
                             Email
                           </FormLabel>
                           <Input w= '250px' py="20px"
-                            fontSize={12}
+                            fontSize={18}
                             {...field}
                             autoComplete="email"
                             name="email"
                             type="email"
                             placeholder="name@gamil.com"
                           />
-                          <FormErrorMessage fontSize={12}>
+                          <FormErrorMessage fontSize={15}>
                             {meta.error}
                           </FormErrorMessage>
                         </FormControl>
@@ -76,7 +76,7 @@ const Forgotpassword = () => {
                     </Field>
 
                     <Box w="full" h='5rem'  fontWeight={500}>
-                      <Button w="full" h='38px' type="submit" fontSize={15} variant="outline">
+                      <Button w="full" h='38px' type="submit" fontSize={18} variant="outline">
                         Reset Password
                       </Button>
                     </Box>

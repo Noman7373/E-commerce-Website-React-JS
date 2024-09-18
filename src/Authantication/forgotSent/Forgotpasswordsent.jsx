@@ -8,10 +8,10 @@ const Forgotpasswordsent = () => {
       <Center minH="256px">
         <VStack spacing={6}>
           <Icon color="#059669" boxSize="3rem" as={BsPatchCheckFill} />
-          <Text fontWeight="500" fontSize={22} textStyle="h4" color="black">
+          <Text fontWeight="500" fontSize={25} textStyle="h4" color="black">
             Successfully Sent
           </Text>
-          <Text textAlign="center" fontSize={14} fontWeight={400} textStyle="p2"  color="black">
+          <Text textAlign="center" fontSize={18} fontWeight={400} textStyle="p2"  color="black">
             We have sent instructions on how to reset your password to{" "}
             <Box as="b" color="black">
               abc@gmail.com

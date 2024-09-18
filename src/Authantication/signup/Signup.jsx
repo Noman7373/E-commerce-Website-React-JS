@@ -10,11 +10,16 @@ import {
   Input,
   Stack,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { object, string } from "yup";
+import { useMutation } from "react-query";
+import { signUpUser } from "../../api/Query/userQuery";
+import { useState } from "react";
+
 const signUpValidationScheme = object({
   firstName: string().required("firstName is required"),
   lastName: string().required("lastName is required"),
@@ -24,13 +29,33 @@ const signUpValidationScheme = object({
     .required("Password is required"),
 });
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const toast = useToast();
+  const { mutate, isLoading } = useMutation({
+    mutationKey: ["signUp"],
+    mutationFn: signUpUser,
+    onSuccess: (data) => {
+      if (email !== "") {
+        navigate(`/register-email-verify/${email}`);
+      }
+    },
+
+    onError: (error) => {
+      toast({
+        title: "SignUp Error",
+        description: error.message,
+        status: "error",
+      });
+    },
+  });
   return (
-    <Container bg="white" h="510px" p={2} maxW="80vh">
-      <Center minH="100%" flexDirection="column" boxShadow="xs">
-        <Text fontSize="22" fontWeight="500" color="#171717">
+    <Container bg="white" h="650px" p={2} maxW="80vh">
+      <Center h="600px" flexDirection="column" boxShadow="xs">
+        <Text fontSize="30" fontWeight="500" color="#171717">
           Welcome to e-Commerce Store
         </Text>
-        <Text fontSize="14" color="gray.600" mt="4">
+        <Text fontSize="18" color="gray.600" mt="4">
           Create a free account by filling out the information below.
         </Text>
         <Formik
@@ -42,6 +67,15 @@ const Signup = () => {
           }}
           onSubmit={(values) => {
             console.log("formValues", values);
+            setEmail(values.email);
+            console.log(email);
+
+            mutate({
+              firstName: values.firstName,
+              lastName: values.lastName,
+              email: values.email,
+              password: values.password,
+            });
           }}
           validationSchema={signUpValidationScheme}
         >
@@ -52,11 +86,11 @@ const Signup = () => {
                   <Field name="firstName">
                     {({ field, meta }) => (
                       <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                        <FormLabel fontSize="12px" htmlFor="firstName">
+                        <FormLabel fontSize="18px" htmlFor="firstName">
                           First Name
                         </FormLabel>
                         <Input
-                          fontSize="12px"
+                          fontSize="15px"
                           fontWeight="500"
                           {...field}
                           id="firstName"
@@ -65,7 +99,7 @@ const Signup = () => {
                           placeholder="Enter Your First Name"
                           autoComplete="firstName"
                         />
-                        <FormErrorMessage fontSize={12}>
+                        <FormErrorMessage fontSize={15}>
                           {meta.error}
                         </FormErrorMessage>
                       </FormControl>
@@ -75,11 +109,11 @@ const Signup = () => {
                   <Field name="lastName">
                     {({ field, meta }) => (
                       <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                        <FormLabel fontSize="12px" htmlFor="lastName">
+                        <FormLabel fontSize="18px" htmlFor="lastName">
                           Last Name
                         </FormLabel>
                         <Input
-                          fontSize="12px"
+                          fontSize="18px"
                           fontWeight="500"
                           {...field}
                           id="lastName"
@@ -88,7 +122,7 @@ const Signup = () => {
                           placeholder="Enter Your Last Name"
                           autoComplete="lastName"
                         />
-                        <FormErrorMessage fontSize={12}>
+                        <FormErrorMessage fontSize={15}>
                           {meta.error}
                         </FormErrorMessage>
                       </FormControl>
@@ -99,11 +133,11 @@ const Signup = () => {
                 <Field name="email">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                      <FormLabel fontSize="12px" htmlFor="email">
+                      <FormLabel fontSize="18px" htmlFor="email">
                         Email
                       </FormLabel>
                       <Input
-                        fontSize="12px"
+                        fontSize="15px"
                         fontWeight="500"
                         {...field}
                         id="email"
@@ -112,7 +146,7 @@ const Signup = () => {
                         placeholder="name@gmail.com"
                         autoComplete="email"
                       />
-                      <FormErrorMessage fontSize={12}>
+                      <FormErrorMessage fontSize={15}>
                         {meta.error}
                       </FormErrorMessage>
                     </FormControl>
@@ -122,11 +156,11 @@ const Signup = () => {
                 <Field name="password">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
-                      <FormLabel fontSize="12px" htmlFor="password">
+                      <FormLabel fontSize="18px" htmlFor="password">
                         Password
                       </FormLabel>
                       <Input
-                        fontSize="12px"
+                        fontSize="15px"
                         fontWeight="500"
                         {...field}
                         id="password"
@@ -135,7 +169,7 @@ const Signup = () => {
                         placeholder="Enter Your Password"
                         autoComplete="password"
                       />
-                      <FormErrorMessage fontSize={12}>
+                      <FormErrorMessage fontSize={15}>
                         {meta.error}
                       </FormErrorMessage>
                     </FormControl>
@@ -143,7 +177,7 @@ const Signup = () => {
                 </Field>
 
                 <Checkbox defaultChecked>
-                  <Text fontSize="12px">
+                  <Text fontSize="18px">
                     I agree to the{" "}
                     <Text as="span" color="blue.500">
                       Terms & Conditions
@@ -151,11 +185,16 @@ const Signup = () => {
                   </Text>
                 </Checkbox>
 
-                <Button type="submit" colorScheme="blue" size="lg">
+                <Button
+                  isLoading={isLoading}
+                  type="submit"
+                  colorScheme="blue"
+                  fontSize={18}
+                >
                   Create Account
                 </Button>
 
-                <Text fontSize="12px" color="gray.600" textAlign="center">
+                <Text fontSize="18px" color="gray.600" textAlign="center">
                   Already have an account?{" "}
                   <Link to="/signin" color="#5F00D9">
                     Log In
