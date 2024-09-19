@@ -7,19 +7,40 @@ import { useState } from "react";
 
 import { useSelector } from "react-redux";
 import { RiMenuFold3Line2 } from "react-icons/ri";
+import useData from "../hooks/useData";
 
 const Navbar = () => {
+  const { logOut } = useData();
   const [navbarLinksShow, setNavbarLinksSHow] = useState(false);
+  const [userMenu, setUserMenu] = useState(false);
   const cartItems = useSelector((state) => state.cart.data);
 
   const handleNavbar = () => {
     setNavbarLinksSHow((prev) => !prev);
   };
 
+  const handleuserMenu = () => {
+    setUserMenu((prev) => !prev);
+  };
+
   return (
     <nav>
       <div className="main">
         <div className="container">
+          <div
+            id={userMenu ? "user-logout-menu-show" : "user-logout-menu"}
+          >
+            <ul id="user-logout-menu-show-ul">
+              <NavLink to="" onClick={handleuserMenu}>
+                {" "}
+                <li onClick={logOut}>Log Out</li>
+              </NavLink>{" "}
+              <NavLink to="/signup" onClick={handleuserMenu}>
+                {" "}
+                <li>Sign Up</li>
+              </NavLink>{" "}
+            </ul>
+          </div>
           <div className="logo">
             <img src="/online-shopping.png" alt="shop-logo" />
           </div>
@@ -58,11 +79,11 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="icons">
-            <NavLink to="/signup">
-              <button>
-                <CiUser />
-              </button>
-            </NavLink>
+            {/* <NavLink to="/signup"> */}
+            <button onClick={handleuserMenu}>
+              <CiUser />
+            </button>
+            {/* </NavLink> */}
             <CiHeart />
             <div className="cart-count">
               <NavLink to="/cart">

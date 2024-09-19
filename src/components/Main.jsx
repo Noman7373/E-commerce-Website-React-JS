@@ -1,7 +1,13 @@
-
+// import { useQuery } from "react-query";
+// import { fetchExample } from "../api/Query/examplequery";
 import "./main.css";
 
 const Main = () => {
+  // const exampleQuery = useQuery({
+  //   queryKey: ["Example"],
+  //   queryFn: fetchExample,
+  // });
+  // if (exampleQuery.isLoading) return <div>Loading.....</div>;
   return (
     <section className="main-section">
       <div className="main-content">

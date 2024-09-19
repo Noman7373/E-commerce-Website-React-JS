@@ -50,8 +50,8 @@ const Signup = () => {
     },
   });
   return (
-    <Container bg="white" h="650px" p={2} maxW="80vh">
-      <Center h="600px" flexDirection="column" boxShadow="xs">
+    <Container bg="white" p={2} maxW="80vh">
+      <Center flexDirection="column" boxShadow="xs">
         <Text
           fontWeight="500"
           color="#171717"
@@ -185,7 +185,7 @@ const Signup = () => {
                   )}
                 </Field>
 
-                <Checkbox defaultChecked>
+                <Checkbox disableddefaulchecked="true">
                   <Text fontSize="18px">
                     I agree to the{" "}
                     <Text as="span" color="blue.500">

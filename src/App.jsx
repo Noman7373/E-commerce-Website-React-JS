@@ -19,20 +19,30 @@ import Registeremail from "./Authantication/Emailsend/Registeremail";
 import Verification from "./Authantication/verifcationsuccess/Verification";
 import ErrorPage from "./components/Errorpage/ErrorPage";
 import ResetpasswordSuccess from "./Authantication/Newpasswordset/ResetpasswordSuccess";
+import ProtectedRoutes from "./components/AuthProtector/ProtectedRoutes";
+import AlreadySignIn from "./components/AuthProtector/AlreadySignIn";
+
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: (
+      // <ProtectedRoutes>
+      <AppLayout />
+      // </ProtectedRoutes>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: (
           <>
-            <Main />
-            <Productcart />
-            <AboutUs />
-            <Contactus />
+            <ProtectedRoutes>
+              <Main />
+              <Productcart />
+              <AboutUs />
+              <Contactus />
+            </ProtectedRoutes>
           </>
         ),
       },
@@ -42,51 +52,99 @@ const router = createBrowserRouter([
       },
       {
         path: "/bestseller",
-        element: <Bestseller />,
+        element: (
+          <ProtectedRoutes>
+            <Bestseller />,
+          </ProtectedRoutes>
+        ),
       },
       {
         path: "/cart",
-        element: <CartSection />,
+        element: (
+          <ProtectedRoutes>
+            <CartSection />
+          </ProtectedRoutes>
+        ),
       },
       {
         path: "/about",
-        element: <AboutUs />,
+        element: (
+          <ProtectedRoutes>
+            <AboutUs />
+          </ProtectedRoutes>
+        ),
       },
       {
         path: "/contact",
-        element: <Contactus />,
+        element: (
+          <ProtectedRoutes>
+            <Contactus />,
+          </ProtectedRoutes>
+        ),
       },
       {
         path: "/signup",
-        element: <Signup />,
+        element: (
+          <AlreadySignIn>
+            <Signup />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/signin",
-        element: <Signin />,
+        element: (
+          <AlreadySignIn>
+            <Signin />,
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/register-email-verify/:email",
-        element: <Registeremail />,
+        element: (
+          <AlreadySignIn>
+            <Registeremail />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/email-verify/:token",
-        element: <Verification />,
+        element: (
+          <AlreadySignIn>
+            <Verification />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/forgot-password",
-        element: <Forgotpassword />,
+        element: (
+          <AlreadySignIn>
+            <Forgotpassword />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/forgot-success/:email",
-        element: <Forgotpasswordsent />,
+        element: (
+          <AlreadySignIn>
+            <Forgotpasswordsent />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/forgot-password-verify/:token",
-        element: <Resetpassword />,
+        element: (
+          <AlreadySignIn>
+            <Resetpassword />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "/reset-success",
-        element: <ResetpasswordSuccess />,
+        element: (
+          <AlreadySignIn>
+            <ResetpasswordSuccess />
+          </AlreadySignIn>
+        ),
       },
       {
         path: "*",
@@ -95,7 +153,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -442,5 +499,7 @@ export default App;
 //   );
 // }
 
-
 // step 16 =================== Create Custom Hook  ========================
+
+// step 17 =======================  Protect User =========================
+// create Protected folder inside folder create one file ProtectedRoutes.jsx
