@@ -19,6 +19,7 @@ import { Formik, Form, Field } from "formik";
 import { object, string } from "yup";
 import { useMutation } from "react-query";
 import { signInUser } from "../../api/Query/userQuery.js";
+import useData from "../../hooks/useData";
 
 const SigninValidationScheme = object({
   email: string().email("Email is invalid").required("Email is required"),
@@ -28,13 +29,26 @@ const SigninValidationScheme = object({
 });
 
 const Signin = () => {
+  const { logIn } = useData();
   const toast = useToast();
   //  for changes request like DELETE, PUT, PATCH, POST we use [useMutation hook] fro react-query
 
   const { mutate, isLoading } = useMutation({
     mutationKey: ["signin"],
     mutationFn: signInUser,
-    onSuccess: (data) => {},
+    onSuccess: (data) => {
+      const { token } = data;
+      if (token) {
+        logIn(token); // Log in with user data and token
+        toast({
+          title: "Signed In",
+          description: "You have successfully signed in.",
+          status: "success",
+        });
+      } else {
+        console.error("Token is undefined in the API response");
+      }
+    },
     onError: (error) => {
       toast({
         title: "Signin Error",
@@ -47,7 +61,16 @@ const Signin = () => {
   return (
     <Container bg="white" h="500px" p={2} maxW="80vh">
       <Center h={500} flexDirection="column" boxShadow="xs">
-        <Text fontSize="30" fontWeight="500" color="#171717">
+        <Text
+          fontWeight="500"
+          color="#171717"
+          fontSize={{
+            base: "2xl",
+            sm: "2xl",
+            lg: "2xl",
+            xl: "3xl",
+          }}
+        >
           Welcome to e-Commerce Store
         </Text>
         <Text fontSize="20" color="gray.600" mt="4">
@@ -55,8 +78,8 @@ const Signin = () => {
         </Text>
         <Formik
           initialValues={{
-            email: "",
-            password: "",
+            email: "k@gmail.com",
+            password: "11223344",
           }}
           onSubmit={(values) => {
             console.log("formValues", values);

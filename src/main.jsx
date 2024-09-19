@@ -4,9 +4,10 @@ import "./index.css";
 import "./App.css";
 
 import store from "./store/store.js";
-import { ProductProvider } from "./components/Context/Providercontext.jsx";
+
 import { Provider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
+import { ProductProvider } from "./Context/Providercontext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <ChakraProvider>

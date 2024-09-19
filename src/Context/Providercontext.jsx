@@ -1,4 +1,7 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
+import { jwtDecode } from "jwt-decode";
+
 export const ProductsList = createContext();
 
 export const ProductProvider = ({ children }) => {
@@ -6,6 +9,34 @@ export const ProductProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [filterData, setFilterData] = useState([]);
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
+  const [cookies, setCookies, removeCookies] = useCookies();
+
+  //  Assign funtion to user LOgin or User Logout
+  const logIn = (tokenStr) => {
+    if (tokenStr) {
+      setToken(tokenStr);
+      const { exp } = jwtDecode(tokenStr);
+      console.log(exp);
+
+      if (exp) {
+        setCookies("jwt", tokenStr, {
+          path: "/",
+          maxAge: exp,
+          sameSite: true,
+        });
+      }
+      return;
+    }
+    logOut();
+  };
+
+  const logOut = () => {
+    setToken(null);
+    setUser(null);
+    removeCookies("jwt", { path: "/" });
+  };
 
   const handleSearch = (e) => {
     const searchProduct = e.target.value;
@@ -64,6 +95,10 @@ export const ProductProvider = ({ children }) => {
         isError,
         handleSearch,
         handleSorting,
+        user,
+        token,
+        logIn,
+        logOut,
       }}
     >
       {children}

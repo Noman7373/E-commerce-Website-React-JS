@@ -1,7 +1,7 @@
 import "./productcart.css";
 import Productlist from "./Productpage/Productlist";
 import { FaApple } from "react-icons/fa";
-import { useData } from "../hooks/useData";
+import useData from "../hooks/useData";
 import { NavLink } from "react-router-dom";
 
 const Productcart = () => {

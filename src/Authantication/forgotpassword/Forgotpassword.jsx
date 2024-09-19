@@ -17,20 +17,29 @@ import {
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 import { sendForgotMail } from "../../api/Query/userQuery";
+import { useState } from "react";
 const Forgotpassword = () => {
-  const toast = useToast();
   const ForgotValidationScheme = object({
     email: string().email("Email is invalid").required("Email is required"),
   });
 
-  const { mutate, isSuccess, isLoading } = useMutation({
+  const [email, setEmail] = useState("");
+
+  const toast = useToast();
+  const navigate = useNavigate();
+
+  const { mutate, isLoading } = useMutation({
     mutationKey: ["ForgotEmail"],
     mutationFn: sendForgotMail,
     onSettled: (data) => {
-      console.log(data);
+      if (email) {
+        navigate(`/forgot-success/${email}`);
+        console.log(data);
+        console.log(email);
+      }
     },
     onError: (error) => {
       toast({
@@ -68,8 +77,12 @@ const Forgotpassword = () => {
                   email: "",
                 }}
                 onSubmit={(values) => {
-                  console.log(values);
+                  // Set email state
+                  setEmail(values.email);
+                  // Trigger mutation
                   mutate({ email: values.email });
+                  // Navigate to the success page with the email
+                  // navigate(`/forgot-success/${values.email}`);
                 }}
                 validationSchema={ForgotValidationScheme}
               >
@@ -106,7 +119,6 @@ const Forgotpassword = () => {
                         fontSize={18}
                         variant="outline"
                         isLoading={isLoading}
-                        onClick={() => mutate()}
                       >
                         Reset Password
                       </Button>

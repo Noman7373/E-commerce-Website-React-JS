@@ -1,7 +1,12 @@
 import { useContext } from "react";
-import { ProductsList } from "../components/Context/Providercontext";
+import { ProductsList } from "../Context/Providercontext";
 
-export const useData = () => {
+const useData = () => {
+  const context = useContext(ProductsList);
+
+  if (context === undefined || context === null) {
+    throw new Error("useData must be used within a ProductsProvider");
+  }
   const {
     data,
     filterData,
@@ -9,8 +14,12 @@ export const useData = () => {
     isError,
     handleSearch,
     handleSorting,
- 
-  } = useContext(ProductsList);
+    user,
+    token,
+    logIn,
+    logOut,
+  } = context;
+
   return {
     data,
     filterData,
@@ -18,6 +27,11 @@ export const useData = () => {
     isError,
     handleSearch,
     handleSorting,
-    
+    user,
+    token,
+    logIn,
+    logOut,
   };
 };
+
+export default useData;

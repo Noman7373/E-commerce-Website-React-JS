@@ -52,7 +52,16 @@ const Signup = () => {
   return (
     <Container bg="white" h="650px" p={2} maxW="80vh">
       <Center h="600px" flexDirection="column" boxShadow="xs">
-        <Text fontSize="30" fontWeight="500" color="#171717">
+        <Text
+          fontWeight="500"
+          color="#171717"
+          fontSize={{
+            base: "2xl",
+            sm: "2xl",
+            lg: "2xl",
+            xl: "3xl",
+          }}
+        >
           Welcome to e-Commerce Store
         </Text>
         <Text fontSize="18" color="gray.600" mt="4">

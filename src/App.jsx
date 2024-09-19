@@ -77,16 +77,16 @@ const router = createBrowserRouter([
         element: <Forgotpassword />,
       },
       {
-        path: "/forgot-success",
+        path: "/forgot-success/:email",
         element: <Forgotpasswordsent />,
       },
       {
-        path: "/reset-password",
+        path: "/forgot-password-verify/:token",
         element: <Resetpassword />,
       },
       {
-        path : "/reset-success",
-        element : <ResetpasswordSuccess />
+        path: "/reset-success",
+        element: <ResetpasswordSuccess />,
       },
       {
         path: "*",
@@ -337,3 +337,110 @@ export default App;
 //     throw new Error(errorMessage);
 //   }
 // };
+
+// const [email, setEmail] = useState("");
+
+// const toast = useToast();
+// const navigate = useNavigate();
+
+// const { mutate, isLoading } = useMutation({
+//   mutationKey: ["ForgotEmail"],
+//   mutationFn: sendForgotMail,
+//   onSettled: (data) => {
+//     if (email) {
+//       navigate(`/forgot-success/${email}`);
+//       console.log(data);
+//       console.log(email);
+//     }
+//   },
+//   onError: (error) => {
+//     toast({
+//       title: "Forgot Error",
+//       description: error.message,
+//       status: "error",
+//     });
+//   },
+// });
+
+// step 14 =============================== Forgot Password Success  ================================
+
+// export const fogotPasswordSuccess = async ({ token ,password }) => {
+//   try {
+//     const { data } = await Axios.post(`${USER_URL}/user/verify-forgot-mail`, {
+//       token,
+//       password
+//     });
+//     console.log(token);
+//     return data;
+//   } catch (error) {
+//     const errorMessage = error.response?.data?.message || "An error occurred";
+//     throw new Error(errorMessage);
+//   }
+// };
+
+// const toast = useToast();
+// const navigate = useNavigate();
+// const { token, password } = useParams();
+
+// const { mutate, isLoading } = useMutation({
+//   mutationKey: ["verify-fogot-token"],
+//   mutationFn: fogotPasswordSuccess,
+//   enabled: !!token && !!password,
+//   onError: (error) => {
+//     toast({
+//       title: "Password is not define",
+//       description: error.message,
+//       status: "error",
+//     });
+//     navigate("/signup");
+//   },
+//   onSettled: () => {
+//     navigate(`/reset-success`);
+//   },
+// });
+
+// if (isLoading)
+//   return (
+//     <Center h="100vh">
+//       {" "}
+//       <Spinner />
+//     </Center>
+//   );
+
+// step 15 ===========================   Protect User ==================================
+// Create one Store where all data will stored so that all component can take data
+//   We use CotextAPI
+
+// Packege JWT decoder
+// React Cookie to store jwt token in cookie
+
+// import { createContext, useState } from "react";
+// import { useCookies } from "react-cookie";
+
+// export const AuthContext = createContext();
+
+// export default function AuthProvider({ children }) {
+//   const [user, setUser] = useState(null);
+//   const [token, setToken] = useState(null);
+//   const [cookies, setCookies, removeCookies] = useCookies();
+//   const logIn = (token) => {
+//     if (token) {
+//       setToken(token);
+
+//       const decodedToken = jwtDecode(token);
+//       console.log(decodedToken);
+//     }
+//   };
+//   const logOut = () => {
+//     setToken(null);
+//     setUser(null);
+//   };
+//   return (
+//     <AuthContext.Provider value={{ user, token, logIn, logOut }}>
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// }
+
+
+// step 16 =================== Create Custom Hook  ========================

@@ -3,7 +3,7 @@ import { addToCart } from "../../store/cartSlice";
 import { useToast } from "@chakra-ui/react";
 import { LuShoppingCart } from "react-icons/lu";
 import { useDispatch } from "react-redux";
-import { useData } from "../../hooks/useData";
+import  useData  from "../../hooks/useData";
 import { ImSpinner } from "react-icons/im";
 import { TbError404 } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
